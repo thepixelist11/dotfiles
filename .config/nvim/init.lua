@@ -262,16 +262,16 @@ require('lazy').setup({
     event = 'VimEnter',
     config = function()
       vim.api.nvim_set_hl(0, 'SignColumn', { clear })
-      -- require('gitsigns').setup {
-      --   signs = {
-      --     add = { text = '┃' },
-      --     change = { text = '┃' },
-      --     delete = { text = '┃' },
-      --     topdelete = { text = '‾' },
-      --     changedelete = { text = '~' },
-      --     untracked = { text = '┆' },
-      --   },
-      -- }
+      require('gitsigns').setup {
+        signs = {
+          add = { text = '┃' },
+          change = { text = '┃' },
+          delete = { text = '┃' },
+          topdelete = { text = '‾' },
+          changedelete = { text = '~' },
+          untracked = { text = '┆' },
+        },
+      }
     end,
   },
 
@@ -931,7 +931,7 @@ require('lazy').setup({
             }
           end,
           left_sep = 'block',
-          right_sep = 'slant_right',
+          right_sep = 'block',
         },
         gitBranch = {
           provider = 'git_branch',
@@ -945,6 +945,7 @@ require('lazy').setup({
         },
         gitDiffAdded = {
           provider = 'git_diff_added',
+          icon = '+',
           hl = {
             fg = 'green',
             bg = 'darkblue',
@@ -954,6 +955,7 @@ require('lazy').setup({
         },
         gitDiffRemoved = {
           provider = 'git_diff_removed',
+          icon = '-',
           hl = {
             fg = 'red',
             bg = 'darkblue',
@@ -963,12 +965,20 @@ require('lazy').setup({
         },
         gitDiffChanged = {
           provider = 'git_diff_changed',
+          icon = '~',
           hl = {
-            fg = 'fg',
+            fg = 'aqua',
             bg = 'darkblue',
           },
           left_sep = 'block',
-          right_sep = 'right_filled',
+          right_sep = 'block',
+        },
+        rightEdge = {
+          provider = '',
+          hl = {
+            fg = 'darkblue',
+            bg = 'bg',
+          },
         },
         separator = {
           provider = '',
@@ -1078,6 +1088,7 @@ require('lazy').setup({
         c.gitDiffAdded,
         c.gitDiffRemoved,
         c.gitDiffChanged,
+        c.rightEdge,
         c.separator,
       }
 

@@ -113,7 +113,7 @@ alias .....='cd ../../../..'
 alias h="history | grep "
 
 # File tree
-alias tree="tree --dirsfirst -a --gitignore -I node_modules -C"
+alias tree="tree --dirsfirst -a --gitignore -I '.git' -C"
 
 # Search files in the current folder
 alias f="find . | grep "
@@ -163,7 +163,8 @@ alias hyprconf='nvim ~/.config/hypr/hyprland.conf'
 alias waybarconf='nvim ~/.config/waybar/config'
 alias kittyconf='nvim ~/.config/kitty/kitty.conf'
 alias win='cd /run/media/ben/Windows-SSD/'
-alias docs='vim ~/Documents/'
+alias docs='nvim ~/Documents/'
+alias dots='nvim ~/dotfiles/'
 
 # Open in default apps
 alias sudoedit='sudo -E nvim'
@@ -305,6 +306,8 @@ cd ()
 		z ~ && ls
 	fi
 }
+
+alias z="cd"
 
 # Returns the last 2 fields of the working directory
 pwd() {
