@@ -1,0 +1,31 @@
+window {
+  font-size: 16px;
+  font-family: "Hack Nerd Font";
+  font-weight: 300;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 10px;
+  border-width: 8px;
+}
+
+#entry:selected {
+  background: linear-gradient(90deg, rgb(48, 179, 219), rgb(99, 0, 219));
+  border-radius: 5px;
+}
+
+#entry {
+  padding-left: 1em;
+  padding-right: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+
+#text {
+  padding-left: 0.75em;
+}
+
+#input {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: none;
+  border-radius: 10px;
+}

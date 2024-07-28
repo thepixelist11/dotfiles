@@ -1,0 +1,46 @@
+MenuBar=Disabled
+
+[CompactMode]
+PreviewSize=128
+
+[ContentDisplay]
+DirectorySizeMode=ContentSize
+RecursiveDirectorySizeLimit=20
+UsePermissionsFormat=CombinedFormat
+
+[DetailsMode]
+PreviewSize=256
+
+[FoldersPanel]
+HiddenFilesShown=true
+
+[General]
+BrowseThroughArchives=true
+ConfirmClosingMultipleTabs=false
+ConfirmClosingTerminalRunningProgram=false
+EditableUrl=true
+HideXTrashFile=true
+RememberOpenedTabs=false
+ShowFullPath=true
+ShowFullPathInTitlebar=true
+ShowToolTips=true
+Version=202
+ViewPropsTimestamp=2024,7,28,18,43,11.349
+
+[IconsMode]
+PreviewSize=96
+TextWidthIndex=0
+
+[InformationPanel]
+dateFormat=ShortFormat
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,textthumbnail,ffmpegthumbs
