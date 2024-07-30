@@ -155,6 +155,9 @@ alias neofetch='fastfetch'
 # Log current 12h time
 alias time='date +%r'
 
+# Move process to bg after ctrl-z
+alias gotobg='bg && disown'
+
 # Common files/directories
 alias bashrc='nvim ~/.bashrc'
 alias vimrc='nvim ~/.config/nvim/init.lua'
