@@ -7,8 +7,6 @@
 
 window#waybar {
   background: transparent;
-  /*    background-color: rgba(43, 48, 59, 0.5); */
-  /*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
   color: #ffffff;
   transition-property: background-color;
   transition-duration: .5s;
@@ -57,7 +55,6 @@ button:hover {
 #workspaces button:hover {}
 
 #workspaces button.active {
-  /*    box-shadow: inset 0 -2px #c9545d; */
   background-color: rgba(0, 0, 0, 0.3);
   color: #ffcc00;
   border-top: 2px solid #ffcc00;
@@ -117,8 +114,8 @@ button:hover {
 
 #battery.charging,
 #battery.plugged {
-  color: #ffffff;
-  background-color: #26A65B;
+  color: #212121;
+  background-color: #ffcc00;
 }
 
 @keyframes blink {
@@ -173,19 +170,3 @@ label:focus {
   -gtk-icon-effect: highlight;
   background-color: #eb4d4b;
 }
-
-/*
-
-window#waybar.solo {
-background-color: #FFFFFF;
-}
-
-window#waybar.termite {
-background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-background-color: #000000;
-border: none;
-}
- */

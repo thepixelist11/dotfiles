@@ -74,6 +74,13 @@ alias cat='bat'
 # Init starship
 eval "$(starship init bash)"
 
+# Run fastfetch if the terminal is large enough
+if [[ $(tput lines) -ge 60 ]]; then
+	if [[ $(tput cols) -ge 80 ]]; then
+		fastfetch
+	fi
+fi
+
 # Prompt
 # PS1='[\u@\h \W]\$\n> '
 
@@ -100,6 +107,7 @@ alias cmatrix='cmatrix -bs -C yellow'
 alias clock='tty-clock -s -c -t -C 6'
 alias code='code --ozone-platform=wayland'
 alias cls='clear'
+alias onefetch='onefetch --number-of-file-churns 0 --no-color-palette'
 
 # Change directory aliases
 alias home='cd ~'
@@ -298,16 +306,25 @@ up() {
 		d=..
 	fi
 	cd $d
+
 }
 
 # Automatically do an ls after each cd, z, or zoxide
 cd ()
 {
 	if [ -n "$1" ]; then
-		z "$@" && ls
+		z "$@"
 	else
-		z ~ && ls
+		z ~
 	fi
+
+	# Onefetch on entering git repo
+	git rev-parse 2>/dev/null
+	if [ $? -eq 0 ]; then
+		onefetch 2>/dev/null
+	fi
+
+	ls
 }
 
 alias z="cd"
@@ -346,3 +363,4 @@ trim() {
 
 export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
 
+. "$HOME/.cargo/env"
