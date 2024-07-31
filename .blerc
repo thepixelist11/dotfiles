@@ -269,8 +269,8 @@ bleopt pager=most
 ## markers).  Those default styles can be overridden by specific mark settings,
 ## such as `exec_errexit_mark`, `exec_elapsed_mark`, and `exec_exit_mark`.
 
-#bleopt edit_marker=$'\e[94m[ble: %s]\e[m'
-#bleopt edit_marker_error=$'\e[91m[ble: %s]\e[m'
+bleopt edit_marker=$''
+bleopt edit_marker_error=$'\e[91m[%s]\e[m'
 
 
 ## "exec_errexit_mark" specifies the format of the mark to show the exit status
