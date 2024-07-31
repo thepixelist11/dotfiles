@@ -2,6 +2,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Source ble.sh
+[[ $- == *i* ]] && source ~/ble.sh/out/ble.sh --noattach
+
 iatest=$(expr index "$-" i)
 
 # Source global definitions
@@ -74,6 +77,9 @@ alias cat='bat'
 # Init starship
 eval "$(starship init bash)"
 
+# Starship transient prompt
+bleopt prompt_ps1_final='$(starship module character)'
+
 # Run fastfetch if the terminal is large enough
 if [[ $(tput lines) -ge 60 ]]; then
 	if [[ $(tput cols) -ge 80 ]]; then
@@ -89,9 +95,6 @@ fi
 #######################################################
 # To temporarily bypass an alias, we precede the command with a \
 
-# alias to show the date
-alias da='date "+%Y-%m-%d %A %T %Z"'
-alias cal='cal -y'
 
 # Poweroff
 alias off='systemctl poweroff'
@@ -108,6 +111,7 @@ alias clock='tty-clock -s -c -t -C 6'
 alias code='code --ozone-platform=wayland'
 alias cls='clear'
 alias onefetch='onefetch --number-of-file-churns 0 --no-color-palette'
+alias cal='cal -y'
 
 # Change directory aliases
 alias home='cd ~'
@@ -159,9 +163,6 @@ alias du='dust -r'
 
 # Neofetch=fastfetch
 alias neofetch='fastfetch'
-
-# Log current 12h time
-alias time='date +%r'
 
 # Move process to bg after ctrl-z
 alias gotobg='bg && disown'
@@ -310,7 +311,7 @@ up() {
 }
 
 # Automatically do an ls after each cd, z, or zoxide
-cd ()
+cd()
 {
 	if [ -n "$1" ]; then
 		z "$@"
@@ -330,9 +331,9 @@ cd ()
 alias z="cd"
 
 # Returns the last 2 fields of the working directory
-pwd() {
-	pwd | awk -F/ '{nlast = NF -1;print $nlast"/"$NF}'
-}
+# pwd() {
+# 	pwd | awk -F/ '{nlast = NF -1;print $nlast"/"$NF}'
+# }
 
 # IP address lookup
 alias whatismyip="whatsmyip"
@@ -364,3 +365,6 @@ trim() {
 export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
 
 . "$HOME/.cargo/env"
+
+# Attach ble.sh. Must be at bottom
+[[ ${BLE_VERSION-} ]] && ble-attach
