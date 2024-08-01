@@ -39,6 +39,11 @@
         "key": "  "
       },
       {
+        "type": "battery",
+        "keyColor": "red",
+        "key": "  "
+      },
+      {
         "type": "custom", // SoftwareStart
         "format": "├─────────── \u001b[1mSoftware Information\u001b[0m ───────────┤"
       },

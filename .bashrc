@@ -81,7 +81,7 @@ eval "$(starship init bash)"
 bleopt prompt_ps1_final='$(starship module character)'
 
 # Run fastfetch if the terminal is large enough
-if [[ $(tput lines) -ge 60 ]]; then
+if [[ $(tput lines) -ge 40 ]]; then
 	if [[ $(tput cols) -ge 80 ]]; then
 		fastfetch
 	fi
