@@ -107,10 +107,10 @@ alias mkdir='mkdir -p'
 alias ping='ping -c 10'
 alias less='less -R'
 alias cmatrix='cmatrix -bs -C yellow'
-alias clock='tty-clock -s -c -t -C 6'
+alias clock='tty-clock -s -c -t -C 3'
 alias code='code --ozone-platform=wayland'
 alias cls='clear'
-alias onefetch='onefetch --number-of-file-churns 0 --no-color-palette'
+alias onefetch='onefetch --number-of-file-churns 0 --no-color-palette --exclude docs dist'
 alias cal='cal -y'
 
 # Change directory aliases

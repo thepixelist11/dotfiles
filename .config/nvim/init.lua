@@ -163,7 +163,7 @@ vim.keymap.set('n', '<leader>cpk', ':!kitty $(pwd) &<CR><CR>', { noremap = true 
 vim.api.nvim_set_keymap('n', '<leader>fr', ':%s///g<Left><Left><Left>', { noremap = true, silent = false })
 
 -- Create terminal split
-vim.keymap.set('n', '<leader>t', ':split | term<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>tt', ':split | term<CR>', { noremap = true })
 
 -- Open link
 vim.api.nvim_set_keymap('n', 'gx', [[:silent execute '!firefox ' . shellescape(expand('<cfile>'), 1)<CR>]], { noremap = true })
@@ -343,6 +343,11 @@ require('lazy').setup({
         --   },
         -- },
         -- pickers = {}
+        defaults = {
+          file_ignore_patterns = {
+            'node_modules',
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -702,43 +707,35 @@ require('lazy').setup({
       vim.fn['mkdp#util#install']()
     end,
   },
-  { -- Autocompletion
+
+  {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
       {
         'L3MON4D3/LuaSnip',
         build = (function()
-          -- Build Step is needed for regex support in snippets.
-          -- This step is not supported in many windows environments.
-          -- Remove the below condition to re-enable on windows.
           if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
             return
           end
           return 'make install_jsregexp'
         end)(),
         dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
-          --    https://github.com/rafamadriz/friendly-snippets
           {
             'rafamadriz/friendly-snippets',
+            'quangnguyen30192/cmp-nvim-ultisnips',
             config = function()
               require('luasnip.loaders.from_vscode').lazy_load()
+              require('cmp_nvim_ultisnips').setup {}
             end,
           },
         },
       },
       'saadparwaiz1/cmp_luasnip',
-
-      -- Adds other completion capabilities.
-      --  nvim-cmp does not ship with all sources by default. They are split
-      --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
     },
     config = function()
-      -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
@@ -750,31 +747,17 @@ require('lazy').setup({
           end,
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
-
-        -- For an understanding of why these mappings were
-        -- chosen, you will need to read `:help ins-completion`
-        --
-        -- No, but seriously. Please read `:help ins-completion`, it is really good!
         mapping = cmp.mapping.preset.insert {
           -- Select the [n]ext item
           ['<C-n>'] = cmp.mapping.select_next_item(),
           -- Select the [p]revious item
           ['<C-p>'] = cmp.mapping.select_prev_item(),
-
           -- Scroll the documentation window [b]ack / [f]orward
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
-
           -- Accept ([y]es) the completion.
-          --  This will auto-import if your LSP supports it.
-          --  This will expand snippets if the LSP sent a snippet.
           ['<S-TAB>'] = cmp.mapping.confirm { select = true },
-
-          -- Manually trigger a completion from nvim-cmp.
-          --  Generally you don't need this, because nvim-cmp will display
-          --  completions whenever it has completion options available.
           ['<C-Space>'] = cmp.mapping.complete {},
-
           ['<C-l>'] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
@@ -846,6 +829,143 @@ require('lazy').setup({
     end,
   },
   {
+    'jghauser/follow-md-links.nvim',
+  },
+  {
+    'nfrid/markdown-togglecheck',
+    dependencies = { 'nfrid/treesitter-utils' },
+    ft = { 'markdown' },
+  },
+  {
+    'Myzel394/easytables.nvim',
+    config = function()
+      require('easytables').setup {}
+    end,
+  },
+  {
+    'OXY2DEV/markview.nvim',
+    lazy = false, -- Recommended
+
+    config = function()
+      local colors = require 'markview.colors'
+      require('markview').setup {
+        --   -- THIS IS ALL FOR HYBRID MODE
+        --   modes = { 'n', 'no', 'c' },
+        --   hybrid_modes = { 'n', 'v', 'vb', 'vc' },
+        --
+        callbacks = {
+          on_enable = function(_, win)
+            vim.wo[win].conceallevel = 0
+            vim.wo[win].concealcursor = '-n'
+          end,
+        },
+        checkboxes = {
+          enable = true,
+
+          checked = {
+            text = '󰄴',
+            -- hl = 'TabLineSel',
+          },
+          unchecked = {
+            text = '󰝦',
+            -- hl = 'TabLineSel',
+          },
+          pending = {},
+        },
+        list_items = {
+          enable = true,
+
+          marker_minus = {
+            text = '-',
+          },
+          marker_plus = {
+            text = '',
+          },
+          marker_star = {
+            add_padding = false,
+            text = ' ',
+          },
+        },
+        tables = {
+          enable = true,
+          use_virt_lines = true,
+        },
+        inline_codes = {
+          enable = true,
+        },
+        horizontal_rules = {
+          enable = true,
+          parts = {
+
+            {
+              type = 'repeating',
+              text = '─',
+
+              direction = 'left',
+              hl = {
+                'Gradient1',
+                'Gradient2',
+                'Gradient3',
+                'Gradient4',
+                'Gradient5',
+                'Gradient6',
+                'Gradient7',
+                'Gradient8',
+                'Gradient9',
+                'Gradient10',
+              },
+
+              repeat_amount = function()
+                local w = vim.api.nvim_win_get_width(0)
+                local l = vim.api.nvim_buf_line_count(0)
+
+                l = vim.fn.strchars(tostring(l)) + 4
+
+                return math.floor((w - (l + 3)) / 2)
+              end,
+            },
+            {
+              type = 'repeating',
+              text = '─',
+
+              direction = 'right',
+              hl = {
+                'Gradient1',
+                'Gradient2',
+                'Gradient3',
+                'Gradient4',
+                'Gradient5',
+                'Gradient6',
+                'Gradient7',
+                'Gradient8',
+                'Gradient9',
+                'Gradient10',
+              },
+
+              repeat_amount = function()
+                local w = vim.api.nvim_win_get_width(0)
+                local l = vim.api.nvim_buf_line_count(0)
+
+                l = vim.fn.strchars(tostring(l)) + 4
+
+                return math.ceil((w - (l + 3)) / 2)
+              end,
+            },
+          },
+        },
+      }
+    end,
+
+    dependencies = {
+      -- You will not need this if you installed the
+      -- parsers manually
+      -- Or if the parsers are in your $RUNTIMEPATH
+      'nvim-treesitter/nvim-treesitter',
+
+      'nvim-tree/nvim-web-devicons',
+    },
+  },
+  {
     'xiyaowong/transparent.nvim',
     lazy = false,
     config = function()
@@ -879,22 +999,7 @@ require('lazy').setup({
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
-  {
-    'simrat39/rust-tools.nvim',
-    config = function()
-      local rt = require 'rust-tools'
-      rt.setup {
-        server = {
-          on_attach = function(_, bufnr)
-            -- Hover actions
-            vim.keymap.set('n', '<C-space>', rt.hover_actions.hover_actions, { buffer = bufnr })
-            -- Code action groups
-            vim.keymap.set('n', '<Leader>a', rt.code_action_group.code_action_group, { buffer = bufnr })
-          end,
-        },
-      }
-    end,
-  },
+  { 'akinsho/git-conflict.nvim', version = '*', config = true },
   {
     'feline-nvim/feline.nvim',
     config = function()
@@ -1217,6 +1322,25 @@ for i, v in ipairs(iskeyword) do
   end
 end
 vim.opt.iskeyword = iskeyword
+
+-- toggle checked / create checkbox if it doesn't exist
+vim.keymap.set('n', '<leader>nn', require('markdown-togglecheck').toggle, { desc = 'Toggle Checkmark' })
+
+-- Easytables create tabe
+vim.keymap.set('n', '<leader>tc', ':EasyTablesCreateNew ')
+vim.keymap.set('n', '<leader>te', ':EasyTablesImportThisTable')
+vim.keymap.set('n', '<leader>tw', ':ExportTable<CR>')
+
+-- require('luasnip.loaders.from_snipmate').lazy_load { paths = './snippets' }
+
+-- Disable concealing on the current line in all files other than md
+vim.cmd [[
+  augroup ConcealCursorSettings
+    autocmd!
+    autocmd FileType * setlocal concealcursor-=n
+    autocmd FileType markdown setlocal concealcursor+=n
+  augroup END
+]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
