@@ -136,6 +136,10 @@
    border: none !important;
  }
 
+ #urlbar {
+   outline: none;
+ }
+
  #urlbar:not(:hover):not([breakout][breakout-extend])>#urlbar-background {
    box-shadow: none !important;
    background: none !important;

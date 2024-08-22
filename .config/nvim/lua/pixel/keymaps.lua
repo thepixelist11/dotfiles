@@ -5,8 +5,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>se', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- TODO: Move these to respective plugins
 vim.keymap.set('n', '<leader>lss', ':LiveServerStart<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>mdp', ':MarkdownPreview<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true })
 vim.keymap.set('i', '<F3>', function()
   require('lsp_signature').toggle_float_win()

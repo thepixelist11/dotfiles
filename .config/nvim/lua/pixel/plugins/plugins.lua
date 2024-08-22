@@ -23,4 +23,24 @@ return {
   { 'akinsho/git-conflict.nvim', version = '*', config = true },
 
   { 'nvim-treesitter/nvim-treesitter-context', opts = {} },
+
+  { 'Sirver/ultisnips', event = { 'InsertEnter' } },
+
+  {
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    ft = { 'markdown' },
+    build = function()
+      vim.fn['mkdp#util#install']()
+    end,
+  },
+
+  {
+    'lervag/vimtex',
+    lazy = false,
+    init = function()
+      vim.g.vimtex_view_method = 'zathura'
+      vim.g.vimtex_compiler_latexmk = { continuous = 1 }
+    end,
+  },
 }

@@ -2,6 +2,7 @@
     "layer": "top",
     "height": 12, 
     "spacing": 2,
+    "reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces", "hyprland/submap", "hyprland/scratchpad", "mpd"],
     "modules-center": ["hyprland/window"],
     "hyprland/window": {

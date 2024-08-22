@@ -5,14 +5,12 @@ return {
   config = function()
     local colors = require 'markview.colors'
     require('markview').setup {
-      --   -- THIS IS ALL FOR HYBRID MODE
-      --   modes = { 'n', 'no', 'c' },
-      --   hybrid_modes = { 'n', 'v', 'vb', 'vc' },
-      --
+      modes = { 'n', 'no', 'c', 'v', 'vb', 'vc' },
+      hybrid_modes = { 'n' },
       callbacks = {
         on_enable = function(_, win)
-          vim.wo[win].conceallevel = 0
-          vim.wo[win].concealcursor = '-n'
+          vim.wo[win].conceallevel = 2
+          vim.wo[win].concealcursor = 'c'
         end,
       },
       checkboxes = {

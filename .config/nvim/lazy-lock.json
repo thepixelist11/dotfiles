@@ -17,6 +17,7 @@
   "lazy.nvim": { "branch": "main", "commit": "077102c5bfc578693f12377846d427f49bc50076" },
   "live-server.nvim": { "branch": "main", "commit": "5fc8abb727827a09d0ce1b7757d0a4c7b5802b09" },
   "lsp_signature.nvim": { "branch": "master", "commit": "a38da0a61c172bb59e34befc12efe48359884793" },
+  "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
   "markdown-togglecheck": { "branch": "main", "commit": "5e9ee3184109a102952c01ef816babe8835b299a" },
   "markview.nvim": { "branch": "main", "commit": "15a49b532f2d79471db2c3ac2ee56e974ffb1dd4" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "ba9c2f0b93deb48d0a99ae0e8d8dd36f7cc286d6" },
@@ -42,5 +43,5 @@
   "treesitter-utils": { "branch": "main", "commit": "df621499e4227f0476f6f4bdb75a9d8dd18d16f2" },
   "ultisnips": { "branch": "master", "commit": "49dc8cb2086db19d385791c8e1635723b0fd95c7" },
   "vim-sleuth": { "branch": "master", "commit": "1cc4557420f215d02c4d2645a748a816c220e99b" },
-  "vim-snippets": { "branch": "master", "commit": "96d79529edc3dee1ccf2ce7b75a88cb546ec2501" }
+  "vimtex": { "branch": "master", "commit": "7f6817c0dca7793907785dd5edb01761df13572c" }
 }

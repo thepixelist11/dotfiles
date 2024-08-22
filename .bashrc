@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -53,6 +54,8 @@ export __NV_PRIME_RENDER_OFFLOAD=1
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export __VK_LAYER_NV_optimus=NVIDIA_only
 export LIBGL_DRIVERS_PATH=/usr/lib/nvidia
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # Causes bash to append to history instead of overwriting it so if you start a new terminal, you have old session history
 shopt -s histappend
@@ -110,7 +113,7 @@ alias cmatrix='cmatrix -bs -C yellow'
 alias clock='tty-clock -s -c -t -C 3'
 alias code='code --ozone-platform=wayland'
 alias cls='clear'
-alias onefetch='onefetch --number-of-file-churns 0 --no-color-palette --exclude docs dist'
+alias onefetch='onefetch --number-of-file-churns 0 --no-color-palette --exclude docs dist build'
 alias cal='cal -y'
 
 # Change directory aliases
@@ -169,9 +172,9 @@ alias gotobg='bg && disown'
 
 # Common files/directories
 alias bashrc='nvim ~/.bashrc'
-alias vimrc='nvim ~/.config/nvim/init.lua'
+alias vimrc='nvim ~/.config/nvim'
 alias starshiprc='nvim ~/.config/starship.toml'
-alias hyprconf='nvim ~/.config/hypr/hyprland.conf'
+alias hyprconf='nvim ~/.config/hypr'
 alias waybarconf='nvim ~/.config/waybar/config'
 alias kittyconf='nvim ~/.config/kitty/kitty.conf'
 alias win='cd /run/media/ben/Windows-SSD/'
