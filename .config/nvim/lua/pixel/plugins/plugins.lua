@@ -1,5 +1,8 @@
 -- This file is for smaller plugins that don't need much config
 
+package.path = package.path .. ';' .. vim.fn.expand '$HOME' .. '/.luarocks/share/lua/5.1/?/init.lua'
+package.path = package.path .. ';' .. vim.fn.expand '$HOME' .. '/.luarocks/share/lua/5.1/?.lua'
+
 return {
   { 'tpope/vim-sleuth' },
 
@@ -36,11 +39,22 @@ return {
   },
 
   {
-    'lervag/vimtex',
-    lazy = false,
-    init = function()
-      vim.g.vimtex_view_method = 'zathura'
-      vim.g.vimtex_compiler_latexmk = { continuous = 1 }
+    '3rd/image.nvim',
+    config = function()
+      local image = require 'image'
+      image.setup()
     end,
+  },
+
+  {
+    'ryleelyman/latex.nvim',
+    config = function()
+      require('latex').setup {}
+    end,
+  },
+
+  {
+    'bullets-vim/bullets.vim',
+    ft = { 'markdown', 'text', 'gitcommit' },
   },
 }

@@ -38,12 +38,12 @@ snippet * "italics"
 *${1:${VISUAL}}*$0
 endsnippet
 
-snippet ** "bold"
+snippet ** "bold" wA
 **${1:${VISUAL}}**$0
 endsnippet
 
-snippet *** "bold italics"
-***${1:${VISUAL}}***$0
+snippet *** "bold italics" wA
+***${1:${VISUAL}}*$0
 endsnippet
 
 snippet /* "Comment"
@@ -142,6 +142,12 @@ snippet example "Example" b
 >
 endsnippet
 
+snippet quote "Quote" b
+>[!QUOTE]
+> $0
+>
+endsnippet
+
 snippet ilc "Inline Code" i
 \`${1:${VISUAL}}\`$0
 endsnippet
@@ -174,3 +180,46 @@ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 endsnippet
+
+# Autocomplete Stuff
+snippet "\\delta" "Delta symbol" rA
+Δ
+endsnippet
+
+snippet "\\therefore" "Therefore symbol" rA
+∴
+endsnippet
+
+snippet "\\prop" "Proportional symbol" rA
+∝
+endsnippet
+
+snippet "\\because" "Because symbol" rA
+∵
+endsnippet
+
+snippet "\\pi" "Pi symbol" rA
+π
+endsnippet
+
+snippet "\\int" "Integral symbol" rA
+∫
+endsnippet
+
+snippet "\\inf" "Infinity symbol" rA
+∞
+endsnippet
+
+snippet "\\tau" "Tau symbol" rA
+τ
+endsnippet
+
+
+snippet "_([a-zA-Z0-9])" "Subscript" r
+`!p snip.rv = '_{}'.format(match.group(1)).translate(str.maketrans("0123456789aehijklmnoprstuvxABCDEFGHIJKLMNOPQRSTUVWXYZ", "₀₁₂₃₄₅₆₇₈₉ₐₑₕᵢⱼₖₗₘₙₒₚᵣₛₜᵤᵥₓₐₑₕᵢⱼₖₗₘₙₒₚᵣₛₜᵤᵥₓ"))`
+endsnippet
+
+snippet "_([a-zA-Z0-9\-=\(\)])" "Subscript" r
+`!p snip.rv = '_{}'.format(match.group(1)).translate(str.maketrans("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-=()", "⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖᑫʳˢᵗᵘᵛʷˣʸᶻᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ⁻⁼⁽⁾"))`
+endsnippet
+

@@ -24,6 +24,14 @@ o.termguicolors = true
 -- Sync clipboard between OS and Neovim.
 o.clipboard = 'unnamedplus'
 
+-- Set max line length to 80 in md files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  callback = function()
+    vim.bo.textwidth = 80
+  end,
+})
+
 -- Enable break indent
 o.breakindent = true
 

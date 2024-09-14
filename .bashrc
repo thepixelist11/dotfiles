@@ -150,6 +150,9 @@ alias untar='tar -xvf'
 alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
 
+# Dictionary
+alias define='sdcv'
+
 # wl-copy alias
 alias clipboard='wl-copy'
 
@@ -180,6 +183,7 @@ alias kittyconf='nvim ~/.config/kitty/kitty.conf'
 alias win='cd /run/media/ben/Windows-SSD/'
 alias docs='nvim ~/Documents/'
 alias dots='nvim ~/dotfiles/'
+alias notes=' cd ~/notes ; nvim ~/notes/home.md'
 
 # Open in default apps
 alias sudoedit='sudo -E nvim'

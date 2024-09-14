@@ -6,6 +6,7 @@ vim.keymap.set('n', '<leader>se', vim.diagnostic.open_float, { desc = 'Show diag
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 vim.keymap.set('n', '<leader>lss', ':LiveServerStart<CR>', { noremap = true })
+
 vim.keymap.set('n', '<leader>mdp', ':MarkdownPreview<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true })
 vim.keymap.set('i', '<F3>', function()
