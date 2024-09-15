@@ -1,12 +1,12 @@
 format = """
-[▒▓](#ffcb6b)\
-[ 󰣇  ](bg:#ffcb6b fg:#212121)\
-[](bg:#4d5663 fg:#ffcb6b)\
+[▒▓](#A3A19C)\
+[ 󰣇  ](bg:#A3A19C fg:#212121)\
+[](bg:#4d5663 fg:#A3A19C)\
 $directory\
-[](fg:#4d5663 bg:#282c34)\
+[](fg:#4d5663 bg:#918E8F)\
 $git_branch\
 $git_status\
-[](fg:#282c34 bg:#212121)\
+[](fg:#918E8F bg:#212121)\
 $nodejs\
 $golang\
 $php\
@@ -21,7 +21,7 @@ $memory_usage\
 \n$status $character"""
 
 [character]
-success_symbol = "[>](fg:#ffcc00)"
+success_symbol = "[>](fg:#A3A19C)"
 error_symbol = "[>](fg:#f07178)"
 
 [directory]
@@ -33,11 +33,11 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:#82aaff"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#282c34)]($style)'
+format = '[[ $symbol $branch ](fg:#0c0c0b bg:#918E8F)]($style)'
 
 [git_status]
-style = "bg:#282c34"
-format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#282c34)]($style)'
+style = "bg:#918E8F"
+format = '[[($all_status$ahead_behind )](fg:#0c0c0b bg:#918E8F)]($style)'
 
 [nodejs]
 symbol = ""
@@ -60,7 +60,7 @@ style = "bg:#212121"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212121)]($style)'
 
 [c]
-symbol = "C"
+symbol = "c"
 style = "bg:#212121"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212121)]($style)'
 
@@ -81,7 +81,7 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212121)]($style)'
 
 [time]
 disabled = false
-time_format = "%I:%M%p" # Hour:Minute Format
+time_format = "%I:%M%p" # hour:minute format
 use_12hr = true
 style = "bg:#1d2230"
 format = '[[  $time ](fg:#a0a9cb bg:#111111)]($style)'
