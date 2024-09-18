@@ -1,17 +1,23 @@
 /* Automatically Generated. Do not edit. */
+* {
+    all: initial; 
+    font-size: 14px;
+    font-family: "Hack Nerd Font";
+}
+
 window {
     font-size: 16px;
     font-family: "Hack Nerd Font";
     font-weight: 300;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: black;
+    opacity: 0.8;
     color: white;
     border-radius: 10px;
     border-width: 8px;
 }
 
 #entry:selected {
-    background: linear-gradient(90deg, #7E7F6F, #959966);
-    border-radius: 5px;
+    background: linear-gradient(90deg, #6A92A7, #2EACC2);
 }
 
 #entry {
@@ -29,4 +35,10 @@ window {
     background-color: rgba(0, 0, 0, 0.9);
     border: none;
     border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+}
+
+#input > image.left {
+    -gtk-icon-transform:scaleX(0);
 }

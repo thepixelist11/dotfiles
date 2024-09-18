@@ -2,6 +2,7 @@
 
 * {
   /* `otf-font-awesome` is required to be installed for icons */
+  all: initial;
   font-family: "Noto Sans CJK KR Regular";
   font-size: 13px;
   min-height: 0;
@@ -45,20 +46,21 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
   background: inherit;
-  border-top: 2px solid @color6;
+  border-top: 2px solid @color2;
 }
 
 #workspaces button {
   padding: 0 8px;
   border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #workspaces button:hover {}
 
 #workspaces button.active {
   background-color: rgba(0, 0, 0, 0.3);
-  color: @color4;
-  border-top: 2px solid @color6;
+  color: @color2;
+  border-top: 2px solid @color2;
 }
 
 #workspaces button.urgent {
@@ -90,7 +92,7 @@ button:hover {
   padding-left: 4px;
   padding-right: 4px;
   background-color: rgba(0, 0, 0, 0.3);
-  color: #ffffff;
+  color: @foreground;
   border-radius: 5px;
 }
 
@@ -115,7 +117,7 @@ button:hover {
 
 #battery.charging,
 #battery.plugged {
-  background-color: @color0;
+  background-color: @color2;
 }
 
 @keyframes blink {
@@ -125,7 +127,7 @@ button:hover {
 }
 
 #battery.warning:not(.charging) {
-  background-color: #f53c3c;
+  background-color: @color2;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -134,7 +136,7 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
+  background-color: @color2;
   color: #ffffff;
   animation-name: blink;
   animation-duration: 0.5s;
