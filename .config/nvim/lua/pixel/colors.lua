@@ -6,3 +6,35 @@ vim.cmd [[
   highlight RenderMarkdownH5Bg guifg=#ffcb6b guibg=#362e20
   highlight RenderMarkdownH6Bg guifg=#ff5370 guibg=#361c21
 ]]
+
+-- CMP
+vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg = 'NONE', strikethrough = true, fg = '#808080' })
+vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { bg = 'NONE', fg = '#89ddff' })
+vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { link = 'CmpIntemAbbrMatch' })
+
+vim.api.nvim_set_hl(0, 'CmpItemKindVariable', { bg = 'NONE', fg = '#b3f6c0' })
+vim.api.nvim_set_hl(0, 'CmpItemKindInterface', { link = 'CmpItemKindVariable' })
+vim.api.nvim_set_hl(0, 'CmpItemKindText', { link = 'CmpItemKindVariable' })
+vim.api.nvim_set_hl(0, 'CmpItemKindFunction', { bg = 'NONE', fg = '#c792ea' })
+vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { link = 'CmpItemKindFunction' })
+vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', { bg = 'NONE', fg = '#D4D4D4' })
+vim.api.nvim_set_hl(0, 'CmpItemKindProperty', { link = 'CmpItemKindKeyword' })
+vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link = 'CmpItemKindKeyword' })
+
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'NONE', fg = '#d4d4d4' })
+
+-- Something changes these at some point, so I need to delay it slightly
+vim.defer_fn(function()
+  vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'NONE', fg = '#777777' })
+  vim.api.nvim_set_hl(0, 'PmenuSel', { bg = '#89d5f9', fg = '#1a1a1a' })
+  -- vim.api.nvim_set_hl(0, 'RenderMarkdownCode', { bg = 'NONE' })
+  -- vim.api.nvim_set_hl(0, 'PmenuSel', { bg = '#ff9800', fg = '#1a1a1a' })
+end, 300)
+
+-- Cursor
+vim.cmd 'highlight Cursor guifg=NONE guibg=#ffcc00'
+vim.cmd 'highlight lCursor guifg=NONE guibg=#ffcc00'
+
+-- Latex stuff
+vim.cmd [[highlight Conceal guifg=NONE guibg=NONE guisp=NONE]]
+vim.cmd [[highlight link Conceal Normal]]

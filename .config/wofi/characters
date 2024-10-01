@@ -1,0 +1,300 @@
+! Exclamation Mark
+# Hash Pound Number Sign
+$ Dollar
+$ Dollar Currency
+% Percent
+& Ampersand
+( Left Parenthesis
+) Right Parenthesis
+* Asterisk
++ Plus
+- Hyphen Minus
+/ Forward Slash
+< Less Than
+= Equals
+> Greater Than
+? Question Mark
+@ At Symbol
+[ Left Bracket
+\ Backslash
+] Right Bracket
+^ Caret
+_ Underscore
+` Backtick Grave Accent
+{ Left Brace Curly Brace
+| Vertical Bar Pipe
+} Right Brace Curly Brace
+~ Tilde
+£ Pound Sterling
+¥ Yen
+¦ Broken Bar
+§ Section Symbol
+© Copyright
+¬ Not
+® Registered Trademark
+° Degree Symbol
+± Plus or Minus
+² Superscript Two
+³ Superscript Three
+¶ Pilcrow Paragraph Symbol
+¹ Superscript One
+¼ One Quarter
+½ One Half
+¾ Three Quarters
+× Multiplication Times
+÷ Division Divide
+Α Alpha Capital Greek Letter
+Β Beta Capital Greek Letter
+Γ Gamma Capital Greek Letter
+Δ Delta Capital Greek Letter
+Ε Epsilon Capital Greek Letter
+Ζ Zeta Capital Greek Letter
+Η Eta Capital Greek Letter
+Θ Theta Capital Greek Letter
+Ι Iota Capital Greek Letter
+Κ Kappa Capital Greek Letter
+Λ Lambda Capital Greek Letter
+Μ Mu Capital Greek Letter
+Ν Nu Capital Greek Letter
+Ξ Xi Capital Greek Letter
+Ο Omicron Capital Greek Letter
+Π Pi Capital Greek Letter
+Ρ Rho Capital Greek Letter
+Σ Sigma Capital Greek Letter
+Τ Tau Capital Greek Letter
+Υ Upsilon Capital Greek Letter
+Φ Phi Capital Greek Letter
+Χ Chi Capital Greek Letter
+Ψ Psi Capital Greek Letter
+Ω Omega Capital Greek Letter
+α Alpha Lowercase Greek Letter
+β Beta Lowercase Greek Letter
+γ Gamma Lowercase Greek Letter
+δ Delta Lowercase Greek Letter
+ε Epsilon Lowercase Greek Letter
+ζ Zeta Lowercase Greek Letter
+η Eta Lowercase Greek Letter
+θ Theta Lowercase Greek Letter
+ι Iota Lowercase Greek Letter
+κ Kappa Lowercase Greek Letter
+λ Lambda Lowercase Greek Letter
+μ Mu Lowercase Greek Letter
+ν Nu Lowercase Greek Letter
+ξ Xi Lowercase Greek Letter
+ο Omicron Lowercase Greek Letter
+π Pi Lowercase Greek Letter
+ρ Rho Lowercase Greek Letter
+ς Final Sigma Greek Letter
+σ Sigma Lowercase Greek Letter
+τ Tau Lowercase Greek Letter
+υ Upsilon Lowercase Greek Letter
+φ Phi Lowercase Greek Letter
+χ Chi Lowercase Greek Letter
+ψ Psi Lowercase Greek Letter
+ω Omega Lowercase Greek Letter
+– En Dash
+— Em Dash
+― Horizontal Bar
+‖ Double Vertical Line
+† Dagger
+‡ Double Dagger
+• Bullet Point
+‣ Triangular Bullet Point
+‧ Small Bullet Dot
+′ Prime Feet
+″ Double Prime Inches
+‽ Interrobang Question Exclamation
+‾ Overline
+⁞ Vertical Four Dots
+⁰ Superscript Zero
+⁴ Superscript Four
+⁵ Superscript Five
+⁶ Superscript Six
+⁷ Superscript Seven
+⁸ Superscript Eight
+⁹ Superscript Nine
+₁ Subscript One
+₂ Subscript Two
+₃ Subscript Three
+₄ Subscript Four
+₅ Subscript Five
+₆ Subscript Six
+₇ Subscript Seven
+₈ Subscript Eight
+₉ Subscript Nine
+₣ French Franc
+₤ Italian Lira
+₦ Nigerian Naira
+₩ South Korean Won
+₪ Israeli Shekel
+₫ Vietnamese Dong
+€ Euro
+₭ Lao Kip
+₯ Greek Drachma
+₲ Paraguayan Guarani
+₸ Kazakhstani Tenge
+₹ Indian Rupee
+₽ Russian Ruble
+₿ Bitcoin
+ℂ Complex Numbers
+℃ Celsius
+℅ Care Of
+℉ Fahrenheit
+ℕ Natural Numbers
+℗ Sound Recording Copyright
+ℙ Prime Numbers
+ℚ Rational Numbers
+ℝ Real Numbers
+℞ Prescription
+℠ Service Mark
+™ Trademark
+ℤ Integers
+ℵ Aleph Null (First Infinite Cardinal)
+⅓ One Third
+⅔ Two Thirds
+⅕ One Fifth
+⅖ Two Fifths
+⅗ Three Fifths
+⅘ Four Fifths
+← Left Arrow
+↑ Up Arrow
+→ Right Arrow
+↓ Down Arrow
+↔ Left-Right Arrow
+↕ Up-Down Arrow
+↚ Left Not Arrow
+↛ Right Not Arrow
+↜ Left Wave Arrow
+↝ Right Wave Arrow
+⇐ Left Double Arrow
+⇑ Up Double Arrow
+⇒ Right Double Arrow
+⇓ Down Double Arrow
+⇔ Left-Right Double Arrow
+⇕ Up-Down Double Arrow
+∀ For All
+∃ There Exists
+∅ Empty Set
+∆ Increment
+∈ Element Of
+∉ Not Element Of
+∏ Product
+∑ Summation
+− Minus
+∓ Minus or Plus
+∕ Division Slash
+∖ Set Minus
+∗ Asterisk Operator
+∗ Convolution Product
+∘ Ring Operator
+∙ Middle Dot Multiplication
+√ Square Root
+∛ Cube Root
+∜ Fourth Root
+∞ Infinity
+∟ Right Angle
+∠ Angle
+∢ Acute Angle
+∣ Divides Vertical Bar
+∧ Logical And
+∨ Logical Or
+∩ Intersection
+∪ Union
+∫ Integral
+∬ Double Integral
+∭ Triple Integral
+∮ Contour Integral
+∴ Therefore
+∵ Because
+∶ Ratio
+∼ Tilde (Similar To)
+≃ Asymptotically Equal
+≅ Congruent To
+≈ Almost Equal To
+≈ Approximately Equal
+≠ Not Equal
+≠ Not Equal To
+≡ Identical To
+≢ Not Identical To
+≤ Less Than or Equal
+≥ Greater Than or Equal
+⊂ Proper Subset Of
+⊂ Subset
+⊃ Proper Superset Of
+⊃ Superset
+⊄ Not Subset Of
+⊅ Not Superset Of
+⊆ Subset or Equal
+⊇ Superset or Equal
+⊕ Direct Sum
+⊖ Circle Minus
+⊗ Tensor Product
+⊘ Circle Division Slash
+⊙ Circle Dot
+⊞ Squared Plus
+⊟ Squared Minus
+⊢ Right Tack (Provable)
+⊣ Left Tack (Refutable)
+⊤ Tautology True
+⊥ Contradiction False
+⊥ Perpendicular
+⊨ Models
+⊩ Satisfies
+⋂ N-Ary Intersection
+⋃ N-Ary Union
+⎔ Diametral Pitch Symbol
+⎜ Left Vertical Box Line
+⎟ Right Vertical Box Line
+⎮ Vertical Bar Extension
+⎯ Long Dash
+⎻ Heavy Em Dash
+⎼ Short Dash
+⎽ Heavy Low Dash
+⏐ Vertical Line Extension
+⏽ Low Vertical Bar
+─ Box Drawings Light Horizontal
+─ Light Horizontal
+━ Box Drawings Heavy Horizontal
+━ Heavy Horizontal
+│ Light Vertical
+┃ Heavy Vertical
+┃ Heavy Vertical Bar
+┌ Light Down and Right
+┐ Light Down and Left
+└ Light Up and Right
+┘ Light Up and Left
+├ Light Horizontal and Down
+┤ Light Horizontal and Up
+┬ Light Vertical and Right
+┴ Light Vertical and Left
+┼ Light Horizontal and Vertical
+╎ Light Triple Dash Vertical
+╒ Heavy Down and Right
+╓ Heavy Down and Left
+╔ Double Line Down and Right
+╝ Double Line Down and Left
+╟ Double Line Vertical and Right
+╣ Double Line Vertical and Left
+╬ Double Line Horizontal and Vertical
+⟦ Left Bracket
+⟧ Right Bracket
+⟨ Left Angle Bracket
+⟩ Right Angle Bracket
+⟵ Long Left Arrow
+⟶ Long Right Arrow
+⟷ Long Left-Right Arrow
+⤫ Cross Mark
+⤴ Right Curved Arrow
+⤵ Left Curved Arrow
+⤶ Clockwise Arrow
+⤷ Counterclockwise Arrow
+⧵ Reverse Solidus
+⧶ Solidus with Overbar
+⧷ Reverse Solidus with Horizontal Stroke
+⧸ Big Solidus Slash
+⧹ Big Reverse Solidus
+⸺ Two-em Dash
+⸻ Three-em Dash
+〰 Wavy Dash
+／ Fullwidth Solidus
+＼ Fullwidth Reverse Solidus

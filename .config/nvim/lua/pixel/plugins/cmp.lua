@@ -2,7 +2,9 @@ return {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
   dependencies = {
+    'hrsh7th/cmp-calc',
     'L3MON4D3/LuaSnip',
+    'David-Kunz/cmp-npm',
     'SirVer/ultisnips',
     {
       'quangnguyen30192/cmp-nvim-ultisnips',
@@ -25,6 +27,37 @@ return {
   config = function()
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
+    local icons = {
+      Text = '',
+      Method = '󰆧',
+      Function = '󰊕',
+      Constructor = '',
+      Field = '󰇽',
+      Variable = '󰫧',
+      Class = '󰠱',
+      Interface = '',
+      Module = '',
+      Property = '󰜢',
+      Unit = '',
+      Value = '󰎠',
+      Enum = '',
+      Keyword = '󰌋',
+      Snippet = '',
+      Color = '󰏘',
+      File = '󰈙',
+      Reference = '',
+      Folder = '󰉋',
+      EnumMember = '',
+      Constant = '󰏿',
+      Struct = '',
+      Event = '',
+      Operator = '󰆕',
+      TypeParameter = '󰅲',
+    }
+
+    local custom_icon = {
+      calc = '󰃬',
+    }
 
     cmp.setup {
       snippet = {
@@ -48,6 +81,41 @@ return {
         { name = 'luasnip' },
         { name = 'ultisnips' },
         { name = 'path' },
+        { name = 'calc' },
+        { name = 'npm', keyword_length = 4 },
+      },
+      formatting = {
+        mode = 'text_symbol',
+        fields = { 'kind', 'abbr' },
+        expandable_indicator = true,
+        format = function(entry, vim_item)
+          vim_item.kind = string.format('%s %s', icons[vim_item.kind], vim_item.kind)
+          if entry.source.name == 'calc' then
+            vim_item.kind = custom_icon.calc
+          end
+          vim_item.menu = ({
+            buffer = '[Buffer]',
+            nvim_lsp = '[LSP]',
+            luasnip = '[LuaSnip]',
+            nvim_lua = '[Lua]',
+            latex_symbols = '[LaTeX]',
+          })[entry.source.name]
+          return vim_item
+        end,
+      },
+      performance = {
+        max_view_entries = 20,
+      },
+      experimental = {
+        ghost_text = true,
+      },
+      window = {
+        documentation = cmp.config.window.bordered {
+          winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+        },
+        completion = cmp.config.window.bordered {
+          winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+        },
       },
     }
   end,

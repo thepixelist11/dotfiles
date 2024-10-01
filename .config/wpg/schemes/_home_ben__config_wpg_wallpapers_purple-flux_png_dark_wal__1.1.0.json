@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/ben/.config/wpg/wallpapers/purple-flux.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#040019",
+        "foreground": "#d48fe2",
+        "cursor": "#d48fe2"
+    },
+    "colors": {
+        "color0": "#040019",
+        "color1": "#35179B",
+        "color2": "#5E169B",
+        "color3": "#572ED6",
+        "color4": "#786ED4",
+        "color5": "#5E4CE0",
+        "color6": "#A11FDC",
+        "color7": "#d48fe2",
+        "color8": "#94649e",
+        "color9": "#35179B",
+        "color10": "#5E169B",
+        "color11": "#572ED6",
+        "color12": "#786ED4",
+        "color13": "#5E4CE0",
+        "color14": "#A11FDC",
+        "color15": "#d48fe2"
+    }
+}

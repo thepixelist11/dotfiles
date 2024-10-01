@@ -1,20 +1,11 @@
-@import url('userContent.css');
-
-/* S E T T I N G S */
+#navigator-toolbox {
+  --toolbar-bgcolor: transparent
+}
 
 :root {
   --navbarWidth: 40vw;
-  /* Set width of navbar. Use px for a fixed width 
-                                or vw for a percentage of your window. */
   --animationSpeed: 0.15s;
 }
-
-
-/* H I D I N G   E L E M E N T S */
-/* Comment or uncomment depending of what elements you want to hide */
-
-/* Back button */
-/* #back-button { display: none !important } */
 
 /* Hide back button only when disabled */
 #back-button[disabled="true"] {
@@ -41,45 +32,23 @@
   display: none !important
 }
 
-/* This is the "Search with" indicator on the urlbar */
-/* #urlbar-search-mode-indicator { display: none !important } */
-
 /* Zoom button */
 #urlbar-zoom-button {
   display: none !important
 }
-
-/* Page action (right three dash button) */
-/* #pageActionButton { display: none !important } */
-
-/* These are the buttons on the right of the urlbar */
-/* #page-action-buttons { display: none !important } */
-
-/* #urlbar-label-box { display: none !important } */
-
-/* This one is the hamburger menu! */
-/* CAUTION: if you hide this some popups may be bugged */
-/* #PanelUI-button { display: none !important } */
 
 /* Tab close button */
 .tab-close-button {
   display: none !important
 }
 
-
 .tab-newtab-button {
   display: none !important;
 }
 
-/* Enable this to show the tab close button when hovering the tab */
 .tabbrowser-tab:hover .tab-close-button {
   display: -moz-inline-box !important
 }
-
-/*============================================================================*/
-
-
-/* Oneline tweak */
 
 #TabsToolbar {
   margin-left: var(--navbarWidth) !important;
@@ -87,6 +56,7 @@
 
 #nav-bar {
   margin-right: calc(100vw - var(--navbarWidth)) !important;
+  background: transparent !important;
 }
 
 #urlbar-container {
@@ -108,7 +78,6 @@
   height: 49px !important;
 }
 
-
 /* Dragging space */
 :root[sizemode="maximized"] #TabsToolbar {
   margin-top: 1px;
@@ -117,9 +86,6 @@
 #TabsToolbar {
   margin-top: 5px;
 }
-
-
-/* Simplifying interface */
 
 #nav-bar {
   background: none !important;
@@ -136,18 +102,17 @@
 
 #urlbar-background {
   border: none !important;
+  outline: none !important;
 }
 
 #urlbar {
-  outline: none;
+  outline: none !important;
 }
 
 #urlbar:not(:hover):not([breakout][breakout-extend])>#urlbar-background {
   box-shadow: none !important;
   background: none !important;
 }
-
-/* Hide urlbar elements when not active */
 
 .urlbar-icon,
 #userContext-indicator,
@@ -184,4 +149,26 @@ tab[visuallyselected] .tab-background::before,
 tab[visuallyselected] .tab-background::before,
 .tab-close-button {
   transition: var(--animationSpeed) !important;
+}
+
+window,
+#main-window,
+#toolbar-menubar,
+#TabsToolbar,
+#PersonalToolbar,
+#navigator-toolbox,
+#sidebar-box {
+  background-color: rgba(41, 47, 52, 0.4) !important;
+  -moz-appearance: none !important;
+  background-image: none !important;
+}
+
+#nav-bar {
+  background-color: rgba(33, 37, 41, 0.5) !important;
+  -moz-appearance: none !important;
+}
+
+.tab-background[selected="true"] {
+  background: rgba(33, 37, 41, 0.3) !important;
+  -moz-appearance: none !important;
 }

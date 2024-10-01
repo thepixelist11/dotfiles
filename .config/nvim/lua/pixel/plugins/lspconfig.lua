@@ -5,14 +5,6 @@ return {
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-    { 'j-hui/fidget.nvim', opts = {
-      notification = {
-        window = {
-          normal_hl = 'NormalNC',
-        },
-      },
-    } },
-
     { 'folke/neodev.nvim', opts = {} },
   },
   config = function()
@@ -47,11 +39,45 @@ return {
         end
       end,
     })
+
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+
+    local lspconfig = require 'lspconfig'
+
+    -- Specify how the border looks like
+    local border = {
+      { '╭', 'FloatBorder' },
+      { '─', 'FloatBorder' },
+      { '╮', 'FloatBorder' },
+      { '│', 'FloatBorder' },
+      { '╯', 'FloatBorder' },
+      { '─', 'FloatBorder' },
+      { '╰', 'FloatBorder' },
+      { '│', 'FloatBorder' },
+    }
+
+    -- Add the border on hover and on signature help popup window
+    local handlers = {
+      ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+      ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+    }
+
+    -- Add border to the diagnostic popup window
+    vim.diagnostic.config {
+      virtual_text = {
+        prefix = '■ ', -- Could be '●', '▎', 'x', '■', , 
+      },
+      float = { border = border },
+    }
+
+    -- Setup GDScript
     require('lspconfig').gdscript.setup(capabilities)
+
     local servers = {
-      gopls = {},
+      gopls = {
+        handlers = handlers,
+      },
       html = {},
       cssls = {},
       emmet_language_server = {},
@@ -65,8 +91,8 @@ return {
           return vim.loop.cwd()
         end,
         single_file_support = true,
+        handlers = handlers,
       },
-
       lua_ls = {
         settings = {
           Lua = {
@@ -76,9 +102,35 @@ return {
           },
         },
       },
+      -- Configure denols
+      denols = {
+        root_dir = require('lspconfig.util').root_pattern('deno.json', 'deno.jsonc'),
+        init_options = {
+          lint = true,
+          unstable = true,
+        },
+      },
+      -- Configure tsserver for non-Deno projects
+      ts_ls = {
+        handlers = handlers,
+        root_dir = require('lspconfig.util').root_pattern 'package.json',
+        single_file_support = false, -- Disable tsserver for single-file TypeScript files
+      },
     }
 
-    require('mason').setup {}
+    for _, lsp in ipairs(servers) do
+      lspconfig[lsp].setup {
+        handlers = handlers,
+      }
+    end
+
+    require('lspconfig.ui.windows').default_options.border = 'rounded'
+
+    require('mason').setup {
+      ui = {
+        border = 'rounded',
+      },
+    }
 
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
@@ -89,9 +141,6 @@ return {
     require('mason-lspconfig').setup {
       handlers = {
         function(server_name)
-          if server_name == 'tsserver' then
-            server_name = 'ts_ls'
-          end
           local server = servers[server_name] or {}
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
           require('lspconfig')[server_name].setup(server)

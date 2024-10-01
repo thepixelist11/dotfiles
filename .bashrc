@@ -59,6 +59,9 @@ export LIBGL_DRIVERS_PATH=/usr/lib/nvidia
 export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
+# Set pager to moar
+# export PAGER=/usr/bin/moar
+
 # Causes bash to append to history instead of overwriting it so if you start a new terminal, you have old session history
 shopt -s histappend
 PROMPT_COMMAND='history -a'
@@ -191,7 +194,8 @@ alias kittyconf='nvim ~/.config/kitty/kitty.conf'
 alias win='cd /run/media/ben/Windows-SSD/'
 alias docs='nvim ~/Documents/'
 alias dots='nvim ~/dotfiles/'
-alias notes=' cd ~/notes ; nvim ~/notes/home.md'
+alias notes='cd ~/notes ; nvim ~/notes/home.md'
+alias chars='nvim dotfiles/.config/wofi/characters'
 
 # Open in default apps
 alias sudoedit='sudo -E nvim'
@@ -383,3 +387,4 @@ export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bi
 
 # Attach ble.sh. Must be at bottom
 [[ ${BLE_VERSION-} ]] && ble-attach
+. "/home/ben/.deno/env"

@@ -4,6 +4,7 @@ package.path = package.path .. ';' .. vim.fn.expand '$HOME' .. '/.luarocks/share
 package.path = package.path .. ';' .. vim.fn.expand '$HOME' .. '/.luarocks/share/lua/5.1/?.lua'
 
 return {
+
   { 'tpope/vim-sleuth' },
 
   { 'numToStr/Comment.nvim' },
@@ -56,5 +57,34 @@ return {
   {
     'bullets-vim/bullets.vim',
     ft = { 'markdown', 'text', 'gitcommit' },
+  },
+
+  {
+    'lervag/vimtex',
+    lazy = false,
+    init = function()
+      vim.g.vimtex_view_method = 'zathura'
+      vim.g.vimtex_compiler_method = 'latexmk'
+      vim.g.vimtex_view_automatic = 1
+      vim.g.vimtex_compiler_latexmk = {
+        build_dir = '',
+        callback = 1,
+        continuous = 1, -- Enables automatic recompilation on file save
+        executable = 'latexmk',
+        options = {
+          '-shell-escape',
+          '-verbose',
+          '-file-line-error',
+          '-synctex=1',
+          '-interaction=nonstopmode',
+        },
+      }
+    end,
+  },
+
+  {
+    'Fildo7525/pretty_hover',
+    event = 'LspAttach',
+    opts = {},
   },
 }

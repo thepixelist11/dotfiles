@@ -15,4 +15,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup 'pixel.plugins'
+local lazy = require 'lazy'
+
+lazy.setup('pixel.plugins', {
+  ui = {
+    border = 'rounded',
+    size = {
+      width = 0.8,
+      height = 0.8,
+    },
+  },
+})

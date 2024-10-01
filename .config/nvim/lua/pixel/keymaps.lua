@@ -5,15 +5,20 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>se', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Start live server
 vim.keymap.set('n', '<leader>lss', ':LiveServerStart<CR>', { noremap = true })
 
+-- MarkdownPreview
 vim.keymap.set('n', '<leader>mdp', ':MarkdownPreview<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true })
-vim.keymap.set('i', '<F3>', function()
-  require('lsp_signature').toggle_float_win()
-end, { silent = true, noremap = true })
 
---
+-- TODO:
+-- vim.keymap.set('n', 'K', require('pretty_hover').hover, { silent = true })
+
+-- Open lsp_signature
+-- vim.keymap.set('i', '<F3>', function()
+--   require('lsp_signature').toggle_float_win()
+-- end, { silent = true, noremap = true })
 
 -- Prevent yanking from single line deletion in normal mode
 vim.keymap.set('n', 'd', '"_d', { noremap = true })
@@ -81,3 +86,12 @@ vim.keymap.set('n', '<leader>nn', require('markdown-togglecheck').toggle, { desc
 vim.keymap.set('n', '<leader>tc', ':EasyTablesCreateNew ')
 vim.keymap.set('n', '<leader>te', ':EasyTablesImportThisTable')
 vim.keymap.set('n', '<leader>tw', ':ExportTable<CR>')
+
+-- Open Triptych
+vim.keymap.set('n', '<leader>-', ':Triptych<CR>', { silent = true })
+
+-- Toggle transparency
+vim.keymap.set('n', '<leader>ts', ':TransparentToggle<CR>', { silent = true })
+
+-- Show signature
+vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { silent = true })
