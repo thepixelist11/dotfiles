@@ -14,11 +14,11 @@ snippet modeline "Vim modeline"
 vim`!v ':set '. (&expandtab ? printf('et sw=%i ts=%i', &sw, &ts) : printf('noet sts=%i sw=%i ts=%i', &sts, &sw, &ts)) . (&tw ? ' tw='. &tw : '') . ':'`
 endsnippet
 
-snippet date "YYYY-MM-DD" w
+snippet ddate "YYYY-MM-DD" w
 `!v strftime("%Y-%m-%d")`
 endsnippet
 
-snippet ddate "Month DD, YYYY" w
+snippet date "Month DD, YYYY" w
 `!v strftime("%b %d, %Y")`
 endsnippet
 

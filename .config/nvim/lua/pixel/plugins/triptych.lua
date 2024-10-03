@@ -6,6 +6,10 @@ return {
     'nvim-tree/nvim-web-devicons', -- optional
   },
   config = function()
-    require('triptych').setup()
+    require('triptych').setup {
+      options = {
+        show_hidden = true,
+      },
+    }
   end,
 }

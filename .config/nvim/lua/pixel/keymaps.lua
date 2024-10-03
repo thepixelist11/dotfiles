@@ -95,3 +95,7 @@ vim.keymap.set('n', '<leader>ts', ':TransparentToggle<CR>', { silent = true })
 
 -- Show signature
 vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { silent = true })
+
+-- FTerm
+vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')

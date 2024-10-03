@@ -87,4 +87,33 @@ return {
     event = 'LspAttach',
     opts = {},
   },
+
+  {
+    'numToStr/FTerm.nvim',
+    config = function()
+      require('FTerm').setup {
+        border = 'rounded',
+        dimensions = {
+          height = 0.9,
+          width = 0.9,
+        },
+      }
+    end,
+  },
+
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    opts = {},
+    config = function()
+      require('ibl').setup()
+    end,
+  },
+
+  {
+    'nvim-tree/nvim-web-devicons',
+    config = function()
+      require('nvim-web-devicons').setup()
+    end,
+  },
 }

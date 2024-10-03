@@ -26,7 +26,7 @@ return {
           open_win_config = {
             relative = 'editor',
             width = 30,
-            height = 20,
+            height = 40,
             col = 1,
             row = 1,
             border = 'rounded',

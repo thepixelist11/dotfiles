@@ -105,6 +105,12 @@ fi
 # PS1='[\u@\h \W]\$\n> '
 
 #######################################################
+# CUSTOM SCRIPT ALIAS'S
+#######################################################
+
+alias rma='~/scripts/rma.sh'
+
+#######################################################
 # GENERAL ALIAS'S
 #######################################################
 # To temporarily bypass an alias, we precede the command with a \
@@ -180,6 +186,9 @@ alias du='dust -r'
 
 # Neofetch=fastfetch
 alias neofetch='fastfetch'
+
+# Ranger alias
+alias rc='ranger'
 
 # Move process to bg after ctrl-z
 alias gotobg='bg && disown'

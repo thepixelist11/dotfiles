@@ -111,6 +111,22 @@ button:hover {
   font-weight: bold;
 }
 
+/*#clock calendar {*/
+/*  background: red;*/
+/*}*/
+
+tooltip {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  border: @color2 solid 1px;
+}
+
+tooltip * {
+  padding: 3px;
+  color: @foreground;
+
+}
+
 #battery icon {
   color: red;
 }
