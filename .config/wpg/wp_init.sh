@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-wpg -nrs 'dark-magical-forest-desktop-wallpaper.jpg.png' 'dark-magical-forest-desktop-wallpaper.jpg.png'
+wpg -nrs 'cloudscape-2.png' 'cloudscape-2.png'

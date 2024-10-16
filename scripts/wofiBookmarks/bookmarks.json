@@ -1,0 +1,158 @@
+{
+  "School Drive": {
+    "url": "https://drive.google.com/drive/u/0/my-drive"
+  },
+  "Classroom": {
+    "url": "https://classroom.google.com/u/0/"
+  },
+  "School Mail": {
+    "url": "https://mail.google.com/mail/u/0/#inbox"
+  },
+  "Google Scholar": {
+    "url": "https://scholar.google.ca/"
+  },
+  "Calendar": {
+    "url": "https://calendar.google.com/calendar/u/0/r"
+  },
+  "Thesaurus": {
+    "url": "https://www.thesaurus.com/"
+  },
+  "BibleGateway": {
+    "url": "https://www.biblegateway.com/"
+  },
+  "Desmos | Graphing Calculator": {
+    "url": "https://www.desmos.com/calculator"
+  },
+  "Functions Classroom": {
+    "url": "https://classroom.google.com/u/0/c/NjQ3Nzk4OTY1MDYw"
+  },
+  "New Testament Classroom": {
+    "url": "https://classroom.google.com/u/0/c/NjQ3ODEzMTAzMzQy"
+  },
+  "Biology Classroom": {
+    "url": "https://classroom.google.com/u/0/c/NjQ3MTY4NTYxODUw"
+  },
+  "Chemistry Classroom": {
+    "url": "https://classroom.google.com/u/0/c/NjQ3NDA4OTUwMzk1"
+  },
+  "Scratch": {
+    "url": "https://scratch.mit.edu"
+  },
+  "jsconsole": {
+    "url": "https://jsconsole.com/"
+  },
+  "MDN Web Docs": {
+    "url": "https://developer.mozilla.org/en-US/"
+  },
+  "Github": {
+    "url": "https://github.com/"
+  },
+  "ASCII Table": {
+    "url": "https://www.asciitable.com/"
+  },
+  "MIT License": {
+    "url": "https://opensource.org/license/mit/"
+  },
+  "Go Standard Library": {
+    "url": "https://www.asciitable.com/"
+  },
+  "Javascript UnPacker": {
+    "url": "https://matthewfl.com/unPacker.html"
+  },
+  "Online Javascript Obfuscator": {
+    "url": "https://beautifytools.com/javascript-obfuscator.php"
+  },
+  "VT100": {
+    "url": "https://vt100.net/docs/vt100-ug/chapter3.html"
+  },
+  "Online C Compiler": {
+    "url": "https://www.programiz.com/c-programming/online-compiler/"
+  },
+  "Lospec": {
+    "url": "https://www.befunky.com/create/blur-image/"
+  },
+  "Image Blur": {
+    "url": "https://www.befunky.com/create/blur-image/"
+  },
+  "Personal Mail": {
+    "url": "https://mail.google.com/mail/u/1/"
+  },
+  "Personal Drive": {
+    "url": "https://drive.google.com/drive/u/1/my-drive"
+  },
+  "Photopea | Online Photo Editor": {
+    "url": "https://www.photopea.com/"
+  },
+  "Adobe Color": {
+    "url": "https://color.adobe.com/create/color-wheel"
+  },
+  "Fantasy Name Generator": {
+    "url": "https://www.fantasynamegenerators.com/"
+  },
+  "VirusTotal": {
+    "url": "https://www.virustotal.com/gui/home/url"
+  },
+  "Nerd Fonts": {
+    "url": "https://www.nerdfonts.com/"
+  },
+  "CloudConvert": {
+    "url": "https://cloudconvert.com/"
+  },
+  "ChatGPT": {
+    "url": "https://chat.openai.com/"
+  },
+  "Grammarly": {
+    "url": "https://app.grammarly.com/"
+  },
+  "Speedrun": {
+    "url": "https://www.speedrun.com/"
+  },
+  "Kahoot": {
+    "url": "https://kahoot.it/"
+  },
+  "Blooket": {
+    "url": "https://blooket.com/"
+  },
+  "Modrinth": {
+    "url": "https://modrinth.com/mods"
+  },
+  "The Minecraft Wiki": {
+    "url": "https://minecraft.wiki/"
+  },
+  "GDDL": {
+    "url": "https://docs.google.com/spreadsheets/d/1xaMERl70vzr8q9MqElr4YethnV15EOe8oL1UV9LLljc/edit#gid=1413530556"
+  },
+  "AUR": {
+    "url": "https://aur.archlinux.org/"
+  },
+  "DuckDNS": {
+    "url": "https://www.duckdns.org/"
+  },
+  "Fixing Multiboot Systems": {
+    "url": "https://www.youtube.com/watch?v=3oQfnNhk7qU"
+  },
+  "Hyprland Wiki": {
+    "url": "https://wiki.hyprland.org/"
+  },
+  "YouTube": {
+    "url": "https://www.youtube.com/"
+  },
+  "Amazon": {
+    "url": "https://www.amazon.ca/"
+  },
+  "Bank": {
+    "url": "https://www.cibc.com/en/personal-banking.html"
+  },
+  "GrantMe": {
+    "url": "https://app.grantme.com/dashboard"
+  },
+  "Plagiarism Checker": {
+    "url": "https://www.duplichecker.com/"
+  },
+  "Blank": {
+    "url": "about:blank"
+  },
+  "About About": {
+    "url": "about:about"
+  }
+}

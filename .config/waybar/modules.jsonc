@@ -1,0 +1,252 @@
+{
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "on-scroll-up": "hyprctl dispatch workspace r-1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1",
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "*": 1
+        }
+    },
+    "cava": {
+        "framerate": 30,
+        "autosens": 1,
+        "bars": 14,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "method": "pipewire",
+        "source": "auto",
+        "stereo": true,
+        "bar_delimiter": 0,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "hide_on_silence": true,
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+    "tray": {
+        "spacing": 10,
+        "on-click": ""
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%r}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span><b>{}</b></span>",
+                "days": "<span><b>{}</b></span>",
+                "weeks": "<span><b>W{}</b></span>",
+                "weekdays": "<span><b>{}</b></span>",
+                "today": "<span color='#89d5f9'><b>{}</b></span>"
+            }
+        },
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%m-%d-%Y}"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 10
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "network": {
+        "format-wifi": "{essid}  ",
+        "format-ethernet": " {ifname}",
+        "tooltip-format": " {ifname} via {gwaddr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠ {ifname}",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": " {icon} {volume}% {format_source}",
+        "format-bluetooth-muted": "  {icon} {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/empty": {
+        "format": ""
+    },
+    // Tools
+    "custom/tools": {
+        "format": "",
+        "tooltip-format": "Tools"
+    },
+    "custom/cliphist": {
+        "format": "",
+        "on-click": "sleep 0.1 && ~/scripts/cliphist.sh",
+        "on-click-middle": "sleep 0.1 && ~/scripts/cliphist.sh w",
+        "tooltip-format": "Clipboard Manager"
+    },
+    "custom/wallpaper": {
+        "format": "",
+        "on-click": "waypaper",
+        "on-click-right": "~/scripts/set-shaders.sh",
+        "tooltip-format": "Left: Select wallpaper\nRight: Select shader"
+    },
+    "custom/calculator": {
+        "format": "",
+        "on-click": "qalculate-gtk",
+        "tooltip-format": "Open calculator"
+    },
+    "custom/spotube": {
+        "format": "",
+        "on-click": "spotube",
+        "tooltip-format": "Open Spotube"
+    },
+    "custom/programming": {
+        "format": "",
+        "on-click": "~/scripts/programming.sh",
+        "tooltip-format": "Programming"
+    },
+    "custom/files": {
+        "format": "",
+        "on-click": "dolphin",
+        "tooltip-format": "Open Dolphin"
+    },
+    "group/tools": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/tools",
+            "custom/cliphist",
+            "custom/calculator",
+            "custom/spotube",
+            "custom/programming",
+            "custom/files",
+            "custom/wallpaper"
+        ]
+    },
+    // Hardware and System Information
+    "custom/system": {
+        "format": "",
+        "tooltip-format": "System"
+    },
+    "cpu": {
+        "format": "󰻠 {usage}% ",
+        "on-click": "kitty btop",
+        "interval": 1
+    },
+    "memory": {
+        "format": "󰍛 {}% ",
+        "on-click": "kitty btop",
+        "interval": 1
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}% ",
+        "path": "/",
+        "on-click": "kitty btop"
+    },
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/system",
+            "disk",
+            "cpu",
+            "memory"
+        ]
+    },
+    // Links
+    "custom/firefox": {
+        "on-click": "firefox --new-window",
+        "format": "",
+        "tooltip-format": "Firefox"
+    },
+    "custom/chatgpt": {
+        "on-click": "firefox --new-window https://chatgpt.com/",
+        "format": "󰚩",
+        "tooltip-format": "ChatGPT"
+    },
+    "group/links": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/firefox",
+            "custom/chatgpt",
+        ]
+    },
+    // Power
+    "custom/poweroff": {
+        "on-click": "",
+        "format": "",
+        "tooltip-format": "Power"
+    },
+    "group/power": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/poweroff",
+        ]
+    }
+}

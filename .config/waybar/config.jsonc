@@ -1,0 +1,33 @@
+{
+    "layer": "top",
+    "height": 24,
+    "spacing": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "reload_style_on_change": true,
+    "include": [
+        "~/.config/waybar/modules.jsonc"
+    ],
+    // Left Modules
+    "modules-left": [
+        "hyprland/workspaces",
+        "cava"
+    ],
+    // Center Modules
+    "modules-center": [
+        "hyprland/window"
+    ],
+    // Right Modules
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "group/hardware",
+        "group/tools",
+        "group/links",
+        "tray",
+        "clock",
+        "group/power"
+    ]
+}

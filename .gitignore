@@ -1,0 +1,4 @@
+*.log
+.config/nvim/spell/
+.config/nvim/wordlist
+.config/wpg/

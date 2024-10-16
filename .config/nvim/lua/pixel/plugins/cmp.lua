@@ -6,7 +6,6 @@ return {
     'L3MON4D3/LuaSnip',
     'David-Kunz/cmp-npm',
     'max397574/cmp-greek',
-    -- 'uga-rosa/cmp-dictionary',
     'SirVer/ultisnips',
     {
       'quangnguyen30192/cmp-nvim-ultisnips',
@@ -60,18 +59,6 @@ return {
     local custom_icon = {
       calc = '󰃬',
     }
-
-    -- require('cmp_dictionary').setup {
-    --   paths = { '/home/ben/.config/nvim/wordlist' },
-    --   exact_length = 2,
-    -- }
-
-    -- cmp.setup.filetype({ 'markdown' }, {
-    --   sources = {
-    --     name = 'dictionary',
-    --     keyword_length = 2,
-    --   },
-    -- })
 
     cmp.setup {
       snippet = {

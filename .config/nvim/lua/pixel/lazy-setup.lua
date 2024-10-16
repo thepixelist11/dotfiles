@@ -18,6 +18,9 @@ vim.opt.rtp:prepend(lazypath)
 local lazy = require 'lazy'
 
 lazy.setup('pixel.plugins', {
+  change_detection = {
+    enabled = false,
+  },
   ui = {
     border = 'rounded',
     size = {

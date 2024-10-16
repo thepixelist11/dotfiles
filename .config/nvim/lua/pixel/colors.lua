@@ -36,5 +36,7 @@ vim.cmd 'highlight Cursor guifg=NONE guibg=#ffcc00'
 vim.cmd 'highlight lCursor guifg=NONE guibg=#ffcc00'
 
 -- Latex stuff
-vim.cmd [[highlight Conceal guifg=NONE guibg=NONE guisp=NONE]]
-vim.cmd [[highlight link Conceal Normal]]
+vim.cmd [[highlight Conceal guifg=#80A8FB guibg=NONE guisp=NONE]]
+vim.cmd [[highlight link @markup.math.latex Conceal]]
+vim.cmd [[highlight link @function.latex Conceal]]
+vim.cmd [[highlight link @operator.latex Conceal]]

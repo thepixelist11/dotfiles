@@ -86,12 +86,17 @@ return {
       bashls = {},
       clangd = {
         cmd = { 'clangd', '--header-insertion=never' },
-        filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
+        filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
         root_dir = function()
           return vim.loop.cwd()
         end,
         single_file_support = true,
         handlers = handlers,
+        settings = {
+          clangd = {
+            fallbackFlags = { '-std=c++20' },
+          },
+        },
       },
       lua_ls = {
         settings = {
@@ -110,11 +115,8 @@ return {
           unstable = true,
         },
       },
-      -- Configure tsserver for non-Deno projects
       ts_ls = {
         handlers = handlers,
-        root_dir = require('lspconfig.util').root_pattern 'package.json',
-        single_file_support = false, -- Disable tsserver for single-file TypeScript files
       },
     }
 

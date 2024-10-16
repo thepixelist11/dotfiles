@@ -1,12 +1,12 @@
 format = """
-[▒▓](#46798B)\
-[ 󰣇  ](bg:#46798B fg:#212121)\
-[](bg:#3D7084 fg:#46798B)\
+[▒▓](#A3A78E)\
+[ 󰣇  ](bg:#A3A78E fg:#212121)\
+[](bg:#6F9988 fg:#A3A78E)\
 $directory\
-[](fg:#3D7084 bg:#2F5868)\
+[](fg:#6F9988 bg:#9B5F45)\
 $git_branch\
 $git_status\
-[](fg:#2F5868 bg:#212121)\
+[](fg:#9B5F45 bg:#212121)\
 $nodejs\
 $golang\
 $php\
@@ -21,11 +21,11 @@ $memory_usage\
 \n$status $character"""
 
 [character]
-success_symbol = "[>](fg:#436F6D)"
+success_symbol = "[>](fg:#C59970)"
 error_symbol = "[>](fg:#f07178)"
 
 [directory]
-style = "fg:#b6d1ca bg:#3D7084"
+style = "fg:#d5ddce bg:#6F9988"
 format = "[ $path ]($style)"
 truncation_length = 5
 truncation_symbol = "…/"
@@ -33,11 +33,11 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:#82aaff"
-format = '[[ $symbol $branch ](fg:#b6d1ca bg:#2F5868)]($style)'
+format = '[[ $symbol $branch ](fg:#d5ddce bg:#9B5F45)]($style)'
 
 [git_status]
-style = "bg:#2F5868"
-format = '[[($all_status$ahead_behind )](fg:#b6d1ca bg:#2F5868)]($style)'
+style = "bg:#9B5F45"
+format = '[[($all_status$ahead_behind )](fg:#d5ddce bg:#9B5F45)]($style)'
 
 [nodejs]
 symbol = ""

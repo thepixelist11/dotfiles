@@ -113,7 +113,16 @@ return {
   {
     'nvim-tree/nvim-web-devicons',
     config = function()
-      require('nvim-web-devicons').setup()
+      require('nvim-web-devicons').setup {}
+    end,
+  },
+
+  {
+    'theHamsta/nvim-dap-virtual-text',
+    config = function()
+      require('nvim-dap-virtual-text').setup {
+        virt_text_win_col = 80,
+      }
     end,
   },
 }

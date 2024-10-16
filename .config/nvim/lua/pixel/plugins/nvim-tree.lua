@@ -47,6 +47,17 @@ return {
               enable = false,
             },
           },
+          glyphs = {
+            git = {
+              unstaged = '✗',
+              staged = '✓',
+              unmerged = '',
+              renamed = '➜',
+              untracked = '★',
+              deleted = '',
+              ignored = '◌',
+            },
+          },
         },
       },
       filters = {

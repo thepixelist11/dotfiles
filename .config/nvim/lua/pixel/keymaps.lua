@@ -87,9 +87,6 @@ vim.keymap.set('n', '<leader>tc', ':EasyTablesCreateNew ')
 vim.keymap.set('n', '<leader>te', ':EasyTablesImportThisTable')
 vim.keymap.set('n', '<leader>tw', ':ExportTable<CR>')
 
--- Open Triptych
-vim.keymap.set('n', '<leader>-', ':Triptych<CR>', { silent = true })
-
 -- Toggle transparency
 vim.keymap.set('n', '<leader>ts', ':TransparentToggle<CR>', { silent = true })
 

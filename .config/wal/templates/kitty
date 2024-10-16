@@ -1,0 +1,48 @@
+# Disable audio bell
+enable_audio_bell no
+
+# Fonts
+font_family           family="JetBrainsMono Nerd Font"
+bold_font             auto
+italic_font           auto
+bold_italic_font      auto
+font_size             10.0
+
+disable_ligatures cursor
+
+symbol_map U+23FB-U+23FE,U+2665,U+26A1,U+2B58,U+E000,U+E0A0-U+E0A3,U+E0B0-U+E0C8,U+E0CA,U+E0CC-U+E0D2,U+E0D4,U+E200-U+E2A9,U+E5FA-U+E634,U+E700-U+E7C5,U+EA60-U+EBEB,U+F000-U+F2E0,U+F300-U+F32F,U+F400-U+F4A9,U+F500-U+F8FF Symbols Nerd Font Mono
+
+# Transparency
+background_opacity 0.8
+
+# Set neovim as editor
+editor nvim
+
+# Do not confirm on close
+confirm_os_window_close 0
+
+# Scrollback
+scrollback_lines 10000
+scrollback_indicator_opacity 0.2
+
+# Colors
+cursor               {cursor}
+foreground           {foreground}
+selection_foreground {background}
+selection_background {foreground}
+color0               {color0}
+color8               {color8}
+color1               {color1}
+color9               {color9}
+color2               {color2}
+color10              {color10}
+color3               {color3}
+color11              {color11}
+color4               {color4}
+color12              {color12}
+color5               {color5}
+color13              {color13}
+color6               {color6}
+color14              {color14}
+color7               {color7}
+color15              {color15}

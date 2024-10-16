@@ -31,10 +31,11 @@ eval "$(zoxide init bash)"
 
 export NVM_DIR="$HOME/.nvm"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# NVM is slow to start up
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export PATH="/home/ben/.local/bin:$PATH"
 
@@ -56,8 +57,13 @@ export __NV_PRIME_RENDER_OFFLOAD=1
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export __VK_LAYER_NV_optimus=NVIDIA_only
 export LIBGL_DRIVERS_PATH=/usr/lib/nvidia
-export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+# export PATH=/usr/local/cuda/bin:$PATH
+# export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export PATH=/opt/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
+
+# Add npm globals to path
+export PATH=~/.npm-global/bin:$PATH
 
 # Set pager to moar
 # export PAGER=/usr/bin/moar
@@ -143,6 +149,11 @@ alias .....='cd ../../../..'
 
 # Search command line history
 alias h="history | grep "
+
+# Calculator
+alias c='kalc --line=true --siunits=false --color=false'
+alias calc='kalc --line=true --siunits=false --color=false'
+alias kalc='kalc --line=true --siunits=false --color=false'
 
 # File tree
 alias tree="tree --dirsfirst -a --gitignore -I '.git' -C"
@@ -258,6 +269,9 @@ alias gstat='git status'
 alias gadd='git add .'
 alias gpom='git push origin main'
 
+# Reload config and terminal
+alias r='source ~/.profile ; clear ; fastfetch'
+
 #######################################################
 # SPECIAL FUNCTIONS
 #######################################################
@@ -358,6 +372,20 @@ cd()
 
 alias z="cd"
 
+# Load NVM
+nvm() {
+	unset -f nvm
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+	nvm "$@"
+}
+
+# Load homebrew
+brew() {
+    unset -f brew
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    brew "$@"
+}
+
 # Returns the last 2 fields of the working directory
 # pwd() {
 # 	pwd | awk -F/ '{nlast = NF -1;print $nlast"/"$NF}'
@@ -397,3 +425,4 @@ export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bi
 # Attach ble.sh. Must be at bottom
 [[ ${BLE_VERSION-} ]] && ble-attach
 . "/home/ben/.deno/env"
+

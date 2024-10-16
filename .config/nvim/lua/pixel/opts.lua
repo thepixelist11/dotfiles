@@ -66,9 +66,12 @@ o.cursorline = true
 o.scrolloff = 15
 
 o.tabstop = 4
-o.shiftwidth = 2
+o.shiftwidth = 4
 o.expandtab = true
-o.softtabstop = 2
+o.softtabstop = 4
+
+-- Add block mode to virtualedit
+o.virtualedit = 'block'
 
 -- Set highlight on search
 o.hlsearch = true
@@ -119,7 +122,21 @@ g.vimtex_compiler_method = 'latexrun'
 -- Disable auto comment
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
-    vim.opt.formatoptions:remove { 'c', 'r', 'o' }
+    local filetype = vim.bo.filetype
+    if filetype ~= 'javascript' and filetype ~= 'typescript' then
+      vim.opt.formatoptions:remove { 'c', 'r', 'o' }
+    end
   end,
   desc = 'Disable new line comment',
 })
+
+-- Set commentstring for .cu files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'cuda',
+  callback = function()
+    vim.opt_local.commentstring = '// %s'
+  end,
+})
+
+-- Enable termguicolors
+vim.opt.termguicolors = true

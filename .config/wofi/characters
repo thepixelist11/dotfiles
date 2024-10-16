@@ -37,6 +37,7 @@ _ Underscore
 ² Superscript Two
 ³ Superscript Three
 ¶ Pilcrow Paragraph Symbol
+· Middle Dot Multiplication
 ¹ Superscript One
 ¼ One Quarter
 ½ One Half
@@ -187,15 +188,16 @@ _ Underscore
 ∗ Asterisk Operator
 ∗ Convolution Product
 ∘ Ring Operator
-· Middle Dot Multiplication
 √ Square Root
 ∛ Cube Root
 ∜ Fourth Root
+∝ Proportional to
 ∞ Infinity
 ∟ Right Angle
 ∠ Angle
 ∢ Acute Angle
 ∣ Divides Vertical Bar
+∥ Parallel
 ∧ Logical And
 ∨ Logical Or
 ∩ Intersection

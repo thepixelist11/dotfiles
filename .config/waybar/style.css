@@ -1,7 +1,6 @@
 @import url("/home/ben/.cache/wal/colors-waybar.css");
 
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
   all: initial;
   font-family: "Noto Sans CJK KR Regular";
   font-size: 13px;
@@ -23,12 +22,10 @@ window#waybar.hidden {
   background-color: transparent;
 }
 
-#workspaces {}
-
 #window {
-  margin: 2;
-  padding-left: 8;
-  padding-right: 8;
+  margin: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
   background-color: rgba(0, 0, 0, 0.3);
   font-size: 14px;
   font-weight: bold;
@@ -53,6 +50,7 @@ button:hover {
   padding: 0 8px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease-out;
 }
 
 #workspaces button:hover {}
@@ -60,40 +58,11 @@ button:hover {
 #workspaces button.active {
   background-color: rgba(0, 0, 0, 0.3);
   color: @color2;
-  border-top: 2px solid @color2;
+  border-top: 4px solid @color2;
 }
 
 #workspaces button.urgent {
   background-color: @color3;
-}
-
-#submap {
-  background-color: #64727D;
-  border-bottom: 3px solid #ffffff;
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#submap,
-#idle_inhibitor,
-#scratchpad,
-#mpd {
-  margin: 2px;
-  padding-left: 4px;
-  padding-right: 4px;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: @foreground;
-  border-radius: 5px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -111,10 +80,6 @@ button:hover {
   font-weight: bold;
 }
 
-/*#clock calendar {*/
-/*  background: red;*/
-/*}*/
-
 tooltip {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
@@ -124,7 +89,6 @@ tooltip {
 tooltip * {
   padding: 3px;
   color: @foreground;
-
 }
 
 #battery icon {
@@ -153,9 +117,8 @@ tooltip * {
 
 #battery.critical:not(.charging) {
   background-color: @color2;
-  color: #ffffff;
   animation-name: blink;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -169,15 +132,6 @@ label:focus {
   background-color: #f53c3c;
 }
 
-#temperature.critical {
-  background-color: #eb4d4b;
-}
-
-#idle_inhibitor.activated {
-  background-color: #ecf0f1;
-  color: #2d3436;
-}
-
 #tray>.passive {
   -gtk-icon-effect: dim;
 }
@@ -185,4 +139,72 @@ label:focus {
 #tray>.needs-attention {
   -gtk-icon-effect: highlight;
   background-color: #eb4d4b;
+}
+
+#tray menu {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 4px;
+  border-radius: 5px;
+  border: @color2 solid 1px;
+  transition: all 0.15s ease;
+}
+
+#tray menu>* {
+  padding: 0 4px;
+  transition: all 0.15s ease;
+}
+
+#tray menu>*:hover {
+  background: @color2;
+  border-radius: 4px;
+}
+
+#cava {
+  color: @color2;
+  font-size: 12px;
+}
+
+#clock,
+#battery,
+#cpu,
+#cava,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#submap,
+#idle_inhibitor,
+#scratchpad,
+#mpris,
+#mpd {
+  margin: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: @foreground;
+  border-radius: 5px;
+}
+
+#custom-cliphist,
+#custom-wallpaper,
+#custom-calculator,
+#custom-system,
+#custom-firefox,
+#custom-chatgpt,
+#custom-spotube,
+#custom-programming,
+#custom-files,
+#custom-poweroff,
+#custom-tools {
+  padding: 0 6px;
+  margin: 2px;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: @foreground;
+  border-radius: 5px;
 }
