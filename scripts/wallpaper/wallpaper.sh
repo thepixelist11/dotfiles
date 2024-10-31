@@ -8,6 +8,9 @@ default_directory="/home/ben/wallpaper"
 monitors=$(hyprctl monitors | grep Monitor | awk '{print $2}')
 input_path="$1"
 
+USE_SWWW=false
+
+# setup
 if [ -n "$input_path" ]; then
   if [ -f "$input_path" ]; then
     background="$input_path"
@@ -26,20 +29,24 @@ else
   fi
 fi
 
+# set the background
 if [ ! -z "$(ps -e | grep waypaper)" ]; then
-  swww img "$background"
-  # This was for Hyprpaper
-  # hyprctl hyprpaper unload all
-  # hyprctl hyprpaper preload "$background"
-  # for monitor in $monitors; do
-  #   hyprctl hyprpaper wallpaper "$monitor, $background"
-  # done
+  if [ $USE_SWWW = true ]; then
+    swww img "$background"
+  else
+    hyprctl hyprpaper unload all
+    hyprctl hyprpaper preload "$background"
+    for monitor in $monitors; do
+      hyprctl hyprpaper wallpaper "$monitor, $background"
+    done
+  fi
 fi
 
 wal -i "$background"
 
 echo "$background" > "/home/ben/scripts/wallpaper/last_wallpaper"
 
+# wpg
 wpg_files=$(wpg -l)
 for file in $wpg_files; do
   wpg -d $file
@@ -47,14 +54,28 @@ done
 wpg -a "$background"
 wpg -s "$(wpg -l)"
 
+# hyprland and discord
 cp ~/.cache/wal/colors-hyprland ~/.config/hypr/hyprland/colors.conf
 pywal-discord -p ~/.config/WebCord/Themes
 
+# various update scripts
 ~/scripts/wallpaper/updateWofi.sh
 ~/scripts/wallpaper/updateStarship.sh
 ~/scripts/wallpaper/updateHyprlock.sh
 
+# ckb-next
+ckb-next --mode "$(~/scripts/wallpaper/getGeneralColor.sh)"
+
+# update mouse
+~/scripts/change-mouse-rgb.sh $(cat ~/.cache/wal/colors | head -n 6 | tail -n -1 | cut -d '#' -f2)
+
+# kvantum
+cp -f ~/.cache/wal/pywal.kvconfig ~/.config/Kvantum/pywal/pywal.kvconfig
+cp -f ~/.cache/wal/pywal.svg ~/.config/Kvantum/pywal/pywal.svg
+
+# reset swaync
 swaync-client -R
 swaync-client -rs
 
+# pywalfox
 pywalfox update

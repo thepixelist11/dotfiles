@@ -25,10 +25,10 @@ return {
           enable = false,
           open_win_config = {
             relative = 'editor',
-            width = 30,
-            height = 40,
+            width = 40,
+            height = 60,
             col = 1,
-            row = 1,
+            row = 0,
             border = 'rounded',
           },
         },

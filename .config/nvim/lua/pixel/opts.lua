@@ -140,3 +140,8 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- Enable termguicolors
 vim.opt.termguicolors = true
+
+-- Cuda
+vim.cmd [[
+  autocmd BufRead,BufNewFile *.cu set filetype=cpp
+]]

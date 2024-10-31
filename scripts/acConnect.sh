@@ -11,8 +11,8 @@ EOF
 else
 cat <<EOF > /home/ben/.config/hypr/hyprland/power.conf
 \$refRate = 60
-\$blurPasses = 0
-\$shadows = off
+\$blurPasses = 4
+\$shadows = on
 EOF
 fi
 

@@ -28,6 +28,7 @@ Version=202
 ViewPropsTimestamp=2024,7,28,18,43,11.349
 
 [IconsMode]
+PreviewSize=80
 TextWidthIndex=0
 
 [InformationPanel]
@@ -43,3 +44,6 @@ ToolBarsMovable=Disabled
 
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,textthumbnail,ffmpegthumbs
+
+[VersionControl]
+enabledPlugins=Git

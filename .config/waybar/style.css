@@ -159,11 +159,6 @@ label:focus {
   border-radius: 4px;
 }
 
-#cava {
-  color: @color2;
-  font-size: 12px;
-}
-
 #clock,
 #battery,
 #cpu,
@@ -188,6 +183,11 @@ label:focus {
   background-color: rgba(0, 0, 0, 0.3);
   color: @foreground;
   border-radius: 5px;
+}
+
+#cava {
+  color: @color2;
+  font-size: 12px;
 }
 
 #custom-cliphist,

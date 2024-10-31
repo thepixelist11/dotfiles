@@ -31,6 +31,7 @@ vim.defer_fn(function()
   -- vim.api.nvim_set_hl(0, 'PmenuSel', { bg = '#ff9800', fg = '#1a1a1a' })
 end, 300)
 
+-- TODO: make this match terminal cursor color
 -- Cursor
 vim.cmd 'highlight Cursor guifg=NONE guibg=#ffcc00'
 vim.cmd 'highlight lCursor guifg=NONE guibg=#ffcc00'
@@ -40,3 +41,6 @@ vim.cmd [[highlight Conceal guifg=#80A8FB guibg=NONE guisp=NONE]]
 vim.cmd [[highlight link @markup.math.latex Conceal]]
 vim.cmd [[highlight link @function.latex Conceal]]
 vim.cmd [[highlight link @operator.latex Conceal]]
+
+-- Zen mode remove sides
+vim.cmd [[highlight ZenBg guibg=NONE]]

@@ -4,6 +4,7 @@ return {
   config = function()
     require('transparent').setup {
       extra_groups = { 'CmpPmenu', 'Pmenu' },
+      exclude_groups = { 'CursorLine' },
     }
   end,
 }

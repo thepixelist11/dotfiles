@@ -125,6 +125,9 @@ alias rma='~/scripts/rma.sh'
 # Poweroff
 alias off='systemctl poweroff'
 
+# lsblk show more info
+alias lsblk='lsblk -f'
+
 # Alias's to modified commands
 alias cp='cp -i'
 alias mv='mv -i'
@@ -138,6 +141,13 @@ alias code='code --ozone-platform=wayland'
 alias cls='clear'
 alias onefetch='onefetch --number-of-file-churns 0 --no-color-palette --exclude docs dist build'
 alias cal='cal -y'
+
+# Use nvim for man pages
+man() {
+  /usr/bin/man $* | \
+    col -b | \
+    nvim -R -c 'set ft=man nomod nolist' -
+}
 
 # Change directory aliases
 alias home='cd ~'
@@ -353,8 +363,7 @@ up() {
 }
 
 # Automatically do an ls after each cd, z, or zoxide
-cd()
-{
+cd() {
 	if [ -n "$1" ]; then
 		z "$@"
 	else
@@ -393,8 +402,7 @@ brew() {
 
 # IP address lookup
 alias whatismyip="whatsmyip"
-function whatsmyip ()
-{
+function whatsmyip () {
 	# Internal IP Lookup.
 	if [ -e /sbin/ip ]; then
 		echo -n "Internal IP: "
@@ -407,6 +415,16 @@ function whatsmyip ()
 	# External IP Lookup
 	echo -n "External IP: "
 	curl -s ifconfig.me
+}
+
+# Call command once every 1 second
+function repeat() {
+	while :
+	do
+		clear
+		$1
+		sleep 1
+	done
 }
 
 
