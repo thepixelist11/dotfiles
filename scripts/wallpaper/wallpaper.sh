@@ -8,8 +8,6 @@ default_directory="/home/ben/wallpaper"
 monitors=$(hyprctl monitors | grep Monitor | awk '{print $2}')
 input_path="$1"
 
-USE_SWWW=false
-
 # setup
 if [ -n "$input_path" ]; then
   if [ -f "$input_path" ]; then
@@ -29,10 +27,19 @@ else
   fi
 fi
 
+ext="${background##*.}"
+
+killall mpvpaper
+
 # set the background
-if [ ! -z "$(ps -e | grep waypaper)" ]; then
-  if [ $USE_SWWW = true ]; then
-    swww img "$background"
+# if [ ! -z "$(ps -e | grep waypaper)" ]; then
+  if [[ "$ext" = "mp4" ]]; then
+    mpv_args="--no-audio --loop --vf=cropdetect"
+    hyprctl monitors | grep -oP '(?<=Monitor )\S+' | while read -r monitor; do
+      mpvpaper -vs -o "$mpv_args" "$monitor" "$background" &
+    done
+    ffmpeg -y -i "$background" -vf "select=eq(n\,0)" -q:v 3 /tmp/bg.png
+    background="/tmp/bg.png"
   else
     hyprctl hyprpaper unload all
     hyprctl hyprpaper preload "$background"
@@ -40,7 +47,7 @@ if [ ! -z "$(ps -e | grep waypaper)" ]; then
       hyprctl hyprpaper wallpaper "$monitor, $background"
     done
   fi
-fi
+# fi
 
 wal -i "$background"
 

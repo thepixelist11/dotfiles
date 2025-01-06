@@ -4,7 +4,6 @@ vim.g.maplocalleader = ' '
 require 'pixel.lazy-setup'
 require 'pixel.opts'
 require 'pixel.keymaps'
-require 'pixel.colors'
 
 function ZathuraOpenPdf()
   local fullPath = vim.fn.expand '%:p'

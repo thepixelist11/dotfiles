@@ -8,9 +8,6 @@ DirectorySizeMode=ContentSize
 RecursiveDirectorySizeLimit=20
 UsePermissionsFormat=CombinedFormat
 
-[DetailsMode]
-PreviewSize=256
-
 [FoldersPanel]
 HiddenFilesShown=true
 

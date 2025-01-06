@@ -2,7 +2,7 @@
 
 colors_json=~/.cache/wal/colors.json
 
-wallpaper="$(jq -r '.wallpaper' $colors_json)"
+wallpaper="$(cat ~/scripts/wallpaper/last_wallpaper)"
 color0="$(~/scripts/hex2rgb.sh $(jq -r '.colors.color0'  $colors_json))"
 color1="$(~/scripts/hex2rgb.sh $(jq -r '.colors.color1'  $colors_json))"
 color2="$(~/scripts/hex2rgb.sh $(jq -r '.colors.color2'  $colors_json))"
@@ -33,7 +33,7 @@ background {
     color = rgba(25, 20, 20, 1.0)
 
     blur_passes = 3
-    blur_size = 2
+    blur_size = 3
     contrast = 0.8916
     brightness = 0.8172
     vibrancy = 0.1696

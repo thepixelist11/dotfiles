@@ -39,13 +39,13 @@ return {
     end,
   },
 
-  {
-    '3rd/image.nvim',
-    config = function()
-      local image = require 'image'
-      image.setup()
-    end,
-  },
+  -- {
+  --   '3rd/image.nvim',
+  --   config = function()
+  --     local image = require 'image'
+  --     image.setup()
+  --   end,
+  -- },
 
   {
     'ryleelyman/latex.nvim',
@@ -131,13 +131,13 @@ return {
     opts = {
       window = {
         backdrop = 1,
-        width = 120,
+        width = 100,
         height = 1,
         options = {
           signcolumn = 'no',
           number = false,
-          -- relativenumber = false,
-          cursorline = false,
+          -- relativenumber = true,
+          cursorline = true,
           cursorcolumn = false,
           foldcolumn = '0',
           list = false,
@@ -151,10 +151,15 @@ return {
     },
   },
 
-  { 'nvchad/volt', lazy = true },
-
   {
-    'nvchad/minty',
-    cmd = { 'Shades', 'Huefy' },
+    'jakemason/ouroboros.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
   },
+
+  -- {
+  --   'sphamba/smear-cursor.nvim',
+  --   opts = {},
+  -- },
 }

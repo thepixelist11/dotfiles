@@ -57,8 +57,6 @@ export __NV_PRIME_RENDER_OFFLOAD=1
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export __VK_LAYER_NV_optimus=NVIDIA_only
 export LIBGL_DRIVERS_PATH=/usr/lib/nvidia
-# export PATH=/usr/local/cuda/bin:$PATH
-# export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export PATH=/opt/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
 
@@ -76,7 +74,7 @@ PROMPT_COMMAND='history -a'
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 # Not supported in the "fish" shell.
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # Allow ctrl-S for history navigation (with ctrl-R)
 [[ $- == *i* ]] && stty -ixon
@@ -107,9 +105,6 @@ if [[ $(tput lines) -ge 40 ]]; then
 	fi
 fi
 
-# Prompt
-# PS1='[\u@\h \W]\$\n> '
-
 #######################################################
 # CUSTOM SCRIPT ALIAS'S
 #######################################################
@@ -121,6 +116,9 @@ alias rma='~/scripts/rma.sh'
 #######################################################
 # To temporarily bypass an alias, we precede the command with a \
 
+
+# Bash with no profile
+alias bashc='bash --noprofile --norc'
 
 # Poweroff
 alias off='systemctl poweroff'
@@ -137,10 +135,12 @@ alias ping='ping -c 10'
 alias less='less -R'
 alias cmatrix='cmatrix -bs -C yellow'
 alias clock='tty-clock -s -c -t -C 3'
-alias code='code --ozone-platform=wayland'
 alias cls='clear'
 alias onefetch='onefetch --number-of-file-churns 0 --no-color-palette --exclude docs dist build'
 alias cal='cal -y'
+
+# Files
+alias f='superfile'
 
 # Use nvim for man pages
 man() {
@@ -168,9 +168,6 @@ alias kalc='kalc --line=true --siunits=false --color=false'
 # File tree
 alias tree="tree --dirsfirst -a --gitignore -I '.git' -C"
 
-# Search files in the current folder
-alias f="find . | grep "
-
 # Count all files (recursively) in the current folder
 alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
 
@@ -188,6 +185,9 @@ alias untar='tar -xvf'
 alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
 
+# Weather
+alias weather='curl -sS wttr.in'
+
 # Dictionary
 alias define='sdcv'
 
@@ -198,6 +198,9 @@ alias clipboard='wl-copy'
 alias x='exit'
 alias q='exit'
 alias :q='exit'
+
+# Steam with args
+alias steam='steam --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
 # Grep
 alias grep='grep --color=auto'
@@ -219,7 +222,6 @@ alias bashrc='nvim ~/.bashrc'
 alias vimrc='nvim ~/.config/nvim'
 alias starshiprc='nvim ~/.config/starship.toml'
 alias hyprconf='nvim ~/.config/hypr'
-alias waybarconf='nvim ~/.config/waybar/config'
 alias kittyconf='nvim ~/.config/kitty/kitty.conf'
 alias win='cd /run/media/ben/Windows-SSD/'
 alias docs='nvim ~/Documents/'
@@ -281,6 +283,10 @@ alias gpom='git push origin main'
 
 # Reload config and terminal
 alias r='source ~/.profile ; clear ; fastfetch'
+
+# Kitty themes
+alias kt_default='kitten themes Default'
+alias kt_pywal='kitten themes Pywal'
 
 #######################################################
 # SPECIAL FUNCTIONS

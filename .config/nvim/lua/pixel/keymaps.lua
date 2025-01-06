@@ -99,3 +99,9 @@ vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>'
 
 -- ZenMode
 vim.keymap.set('n', '<A-z>', ':ZenMode<CR>', { silent = true })
+
+-- Switch to header file
+vim.keymap.set('n', '<leader>gh', ':Ouroboros<CR>', { silent = true })
+
+-- CCC Picker
+vim.keymap.set('n', '<leader>ccc', ':CccPick<CR>', { silent = true })
