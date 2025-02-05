@@ -13,18 +13,17 @@
 (defsrc
     h j k l
     grv
-    caps
+    esc
 )
 
 (defalias
     grv (tap-hold-press $tap-time $hold-time grv (layer-toggle arrows))
-    caps (tap-hold-press $tap-time $hold-time esc lctl)
 )
 
 (deflayer default
     _ _ _ _
     @grv
-    @caps
+    _
 )
 
 (deflayer arrows

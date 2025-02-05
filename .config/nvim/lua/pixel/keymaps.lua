@@ -68,9 +68,6 @@ vim.api.nvim_set_keymap('n', '<leader>fr', ':%s///g<Left><Left><Left>', { norema
 -- Create terminal split
 vim.keymap.set('n', '<leader>tt', ':split | term<CR>', { noremap = true })
 
--- Open link with firefox
-vim.api.nvim_set_keymap('n', 'gx', [[:silent execute '!firefox ' . shellescape(expand('<cfile>'), 1)<CR>]], { noremap = true })
-
 -- Search current selection in google
 function GoogleSearch()
   local searchterm = vim.fn.getreg 'g'
@@ -105,3 +102,9 @@ vim.keymap.set('n', '<leader>gh', ':Ouroboros<CR>', { silent = true })
 
 -- CCC Picker
 vim.keymap.set('n', '<leader>ccc', ':CccPick<CR>', { silent = true })
+
+-- Bufferline
+vim.keymap.set('n', '<leader>bp', ':BufferLineTogglePin<CR>', { silent = true })
+vim.keymap.set('n', '<C-Tab>', ':BufferLineCycleNext<CR>', { silent = true })
+vim.keymap.set('n', '<C-S-Tab>', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set('n', '<C-x>', ':bd<CR>', { silent = true })

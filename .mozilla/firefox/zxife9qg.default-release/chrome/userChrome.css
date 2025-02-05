@@ -1,45 +1,46 @@
 #navigator-toolbox {
-  --toolbar-bgcolor: transparent
+  --toolbar-bgcolor: transparent;
 }
 
 :root {
   --navbarWidth: 40vw;
   --animationSpeed: 0.15s;
+  --tabpanel-background-color: transparent !important;
 }
 
 /* Hide back button only when disabled */
 #back-button[disabled="true"] {
-  display: none !important
+  display: none !important;
 }
 
 /* Forward button */
 #forward-button {
-  display: none !important
+  display: none !important;
 }
 
 /* Hide forward button only when disabled */
 #forward-button[disabled="true"] {
-  display: none !important
+  display: none !important;
 }
 
 /* "Shield" icon */
 #tracking-protection-icon-container {
-  display: none !important
+  display: none !important;
 }
 
 /* Site information button */
 #identity-box {
-  display: none !important
+  display: none !important;
 }
 
 /* Zoom button */
 #urlbar-zoom-button {
-  display: none !important
+  display: none !important;
 }
 
 /* Tab close button */
 .tab-close-button {
-  display: none !important
+  display: none !important;
 }
 
 .tab-newtab-button {
@@ -47,7 +48,7 @@
 }
 
 .tabbrowser-tab:hover .tab-close-button {
-  display: -moz-inline-box !important
+  display: -moz-inline-box !important;
 }
 
 #TabsToolbar {
@@ -158,17 +159,18 @@ window,
 #PersonalToolbar,
 #navigator-toolbox,
 #sidebar-box {
-  background-color: rgba(41, 47, 52, 0.4) !important;
+  background-color: rgba(41, 47, 52, 0.1) !important;
   -moz-appearance: none !important;
   background-image: none !important;
 }
 
-#nav-bar {
-  background-color: rgba(33, 37, 41, 0.5) !important;
+.tab-background[selected] {
   -moz-appearance: none !important;
+  background-image: none !important;
+  background-color: rgba(33, 37, 41, 0.1) !important;
 }
 
-.tab-background[selected="true"] {
-  background: rgba(33, 37, 41, 0.3) !important;
+#nav-bar {
+  background-color: rgba(33, 37, 41, 0.1) !important;
   -moz-appearance: none !important;
 }

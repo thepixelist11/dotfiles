@@ -209,12 +209,3 @@ snippet "\\tau" "Tau symbol" rA
 τ
 endsnippet
 
-
-snippet "_([a-zA-Z0-9])" "Subscript" r
-`!p snip.rv = '_{}'.format(match.group(1)).translate(str.maketrans("0123456789aehijklmnoprstuvxABCDEFGHIJKLMNOPQRSTUVWXYZ", "₀₁₂₃₄₅₆₇₈₉ₐₑₕᵢⱼₖₗₘₙₒₚᵣₛₜᵤᵥₓₐₑₕᵢⱼₖₗₘₙₒₚᵣₛₜᵤᵥₓ"))`
-endsnippet
-
-snippet "_([a-zA-Z0-9\-=\(\)])" "Subscript" r
-`!p snip.rv = '_{}'.format(match.group(1)).translate(str.maketrans("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-=()", "⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖᑫʳˢᵗᵘᵛʷˣʸᶻᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ⁻⁼⁽⁾"))`
-endsnippet
-

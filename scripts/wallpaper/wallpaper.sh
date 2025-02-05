@@ -84,5 +84,7 @@ cp -f ~/.cache/wal/pywal.svg ~/.config/Kvantum/pywal/pywal.svg
 swaync-client -R
 swaync-client -rs
 
+kitten themes Pywal
+
 # pywalfox
 pywalfox update

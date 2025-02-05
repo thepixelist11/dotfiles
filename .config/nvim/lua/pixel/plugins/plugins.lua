@@ -158,8 +158,178 @@ return {
     },
   },
 
+  {
+    'monaqa/dial.nvim',
+  },
+
+  {
+    'jiaoshijie/undotree',
+    dependencies = 'nvim-lua/plenary.nvim',
+    config = true,
+    keys = { -- load the plugin only when using it's keybinding:
+      { '<leader>u', "<cmd>lua require('undotree').toggle()<cr>" },
+    },
+  },
+
+  {
+    'xiyaowong/transparent.nvim',
+    lazy = false,
+    config = function()
+      require('transparent').setup {
+        extra_groups = { 'CmpPmenu', 'Pmenu' },
+        exclude_groups = { 'CursorLine' },
+      }
+    end,
+  },
+
+  {
+    'rachartier/tiny-inline-diagnostic.nvim',
+    event = 'VeryLazy',
+    priority = 1000,
+    config = function()
+      vim.diagnostic.config { virtual_text = false }
+      require('tiny-inline-diagnostic').setup {}
+    end,
+  },
+
+  {
+    'lewis6991/gitsigns.nvim',
+    event = 'VimEnter',
+    config = function()
+      vim.api.nvim_set_hl(0, 'SignColumn', { clear })
+      require('gitsigns').setup {
+        signs = {
+          add = { text = '┃' },
+          change = { text = '┃' },
+          delete = { text = '┃' },
+          topdelete = { text = '‾' },
+          changedelete = { text = '~' },
+          untracked = { text = '┆' },
+        },
+      }
+    end,
+  },
+
+  {
+    'uga-rosa/ccc.nvim',
+    config = function()
+      local ccc = require 'ccc'
+      local mapping = ccc.mapping
+
+      ccc.setup {
+        highlighter = {
+          auto_enable = true,
+          lsp = true,
+        },
+        inputs = {
+          ccc.input.rgb,
+          ccc.input.hsl,
+          ccc.input.cmyk,
+          ccc.input.oklab,
+        },
+      }
+    end,
+  },
+
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup {
+        autotag = {
+          enable = true,
+        },
+      }
+    end,
+  },
+
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = function()
+      require('nvim-autopairs').setup {
+        disable_filetype = { 'TelescopePrompt', 'vim' },
+      }
+    end,
+  },
+
+  {
+    'meznaric/key-analyzer.nvim',
+    opts = {},
+  },
+
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = 'kevinhwang91/promise-async',
+    config = function()
+      vim.o.foldcolumn = '1'
+      vim.o.foldlevel = 99
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = true
+      vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+
+      vim.keymap.set('n', 'zO', require('ufo').openAllFolds)
+      vim.keymap.set('n', 'zC', require('ufo').closeAllFolds)
+
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
+      }
+      local language_servers = vim.lsp.get_clients()
+      for _, ls in ipairs(language_servers) do
+        require('lspconfig')[ls].setup {
+          capabilities = capabilities,
+        }
+      end
+      require('ufo').setup()
+    end,
+  },
+
   -- {
-  --   'sphamba/smear-cursor.nvim',
-  --   opts = {},
+  --   '3rd/image.nvim',
+  --   config = function()
+  --     require('image').setup {
+  --       backend = 'kitty',
+  --       integrations = {
+  --         markdown = {
+  --           enabled = true,
+  --           clear_in_insert_mode = false,
+  --           download_remote_images = true,
+  --           only_render_image_at_cursor = false,
+  --           floating_windows = false,
+  --           filetypes = { 'markdown' },
+  --         },
+  --         neorg = {
+  --           enabled = true,
+  --           filetypes = { 'norg' },
+  --         },
+  --       },
+  --       max_width = nil,
+  --       max_height = nil,
+  --       max_width_window_percentage = nil,
+  --       max_height_window_percentage = 50,
+  --       window_overlap_clear_enabled = false,
+  --       window_overlap_clear_ft_ignore = { 'cmp_menu', 'cmp_docs', 'snacks_notif', 'scrollview', 'scrollview_sign' },
+  --       editor_only_render_when_focused = false,
+  --       tmux_show_only_in_active_window = false,
+  --       hijack_file_patterns = { '*.png', '*.jpg', '*.jpeg', '*.gif', '*.webp', '*.avif' },
+  --     }
+  --   end,
+  -- },
+
+  -- {
+  --   'nvim-neorg/neorg',
+  --   lazy = false,
+  --   version = '*',
+  --   config = function()
+  --     local norg = require 'neorg'
+  --     norg.setup {
+  --       load = {
+  --         ['core.defaults'] = {},
+  --         ['core.concealer'] = {},
+  --         ['core.latex.renderer'] = {},
+  --       },
+  --     }
+  --   end,
   -- },
 }

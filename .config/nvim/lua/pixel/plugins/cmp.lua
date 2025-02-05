@@ -7,6 +7,7 @@ return {
     'David-Kunz/cmp-npm',
     'max397574/cmp-greek',
     'SirVer/ultisnips',
+    'xzbdmw/colorful-menu.nvim',
     {
       'quangnguyen30192/cmp-nvim-ultisnips',
       config = function()
@@ -28,6 +29,7 @@ return {
   config = function()
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
+    local colorful_menu = require 'colorful-menu'
     local icons = {
       Text = '',
       Method = '󰆧',
@@ -60,6 +62,19 @@ return {
       calc = '󰃬',
     }
 
+    colorful_menu.setup {
+      -- If the built-in logic fails to find a suitable highlight group,
+      -- this highlight is applied to the label.
+      fallback_highlight = '@variable',
+      -- If provided, the plugin truncates the final displayed text to
+      -- this width (measured in display cells). Any highlights that extend
+      -- beyond the truncation point are ignored. When set to a float
+      -- between 0 and 1, it'll be treated as percentage of the width of
+      -- the window: math.floor(max_width * vim.api.nvim_win_get_width(0))
+      -- Default 60.
+      max_width = 60,
+    }
+
     cmp.setup {
       snippet = {
         expand = function(args)
@@ -86,22 +101,44 @@ return {
         { name = 'greek' },
         { name = 'npm', keyword_length = 4 },
       },
+      -- formatting = { -- NOTE: My formatting
+      --   mode = 'text_symbol',
+      --   fields = { 'kind', 'abbr' },
+      --   expandable_indicator = true,
+      --   format = function(entry, vim_item)
+      --     vim_item.kind = string.format('%s %s', icons[vim_item.kind], vim_item.kind)
+      --     if entry.source.name == 'calc' then
+      --       vim_item.kind = custom_icon.calc
+      --     end
+      --     vim_item.menu = ({
+      --       buffer = '[Buffer]',
+      --       nvim_lsp = '[LSP]',
+      --       luasnip = '[LuaSnip]',
+      --       nvim_lua = '[Lua]',
+      --       latex_symbols = '[LaTeX]',
+      --     })[entry.source.name]
+      --     return vim_item
+      --   end,
+      -- },
       formatting = {
         mode = 'text_symbol',
         fields = { 'kind', 'abbr' },
         expandable_indicator = true,
         format = function(entry, vim_item)
+          local highlights_info = colorful_menu.cmp_highlights(entry)
+
+          -- highlight_info is nil means we are missing the ts parser, it's
+          -- better to fallback to use default `vim_item.abbr`. What this plugin
+          -- offers is two fields: `vim_item.abbr_hl_group` and `vim_item.abbr`.
+          if highlights_info ~= nil then
+            vim_item.abbr_hl_group = highlights_info.highlights
+            vim_item.abbr = highlights_info.text
+          end
           vim_item.kind = string.format('%s %s', icons[vim_item.kind], vim_item.kind)
           if entry.source.name == 'calc' then
             vim_item.kind = custom_icon.calc
           end
-          vim_item.menu = ({
-            buffer = '[Buffer]',
-            nvim_lsp = '[LSP]',
-            luasnip = '[LuaSnip]',
-            nvim_lua = '[Lua]',
-            latex_symbols = '[LaTeX]',
-          })[entry.source.name]
+
           return vim_item
         end,
       },
@@ -111,14 +148,14 @@ return {
       experimental = {
         ghost_text = true,
       },
-      window = {
-        documentation = cmp.config.window.bordered {
-          winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
-        },
-        completion = cmp.config.window.bordered {
-          winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
-        },
-      },
+      -- window = {
+      --   documentation = cmp.config.window.bordered {
+      --     winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+      --   },
+      --   completion = cmp.config.window.bordered {
+      --     winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+      --   },
+      -- },
     }
   end,
 }
