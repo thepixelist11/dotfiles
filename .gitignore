@@ -2,3 +2,4 @@
 .config/nvim/spell/
 .config/nvim/wordlist
 .config/wpg
+scripts/misc/ai-speech-thing/node_modules
