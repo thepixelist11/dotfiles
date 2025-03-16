@@ -27,7 +27,6 @@ fi
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 	source /etc/profile.d/vte.sh
 fi
-eval "$(zoxide init bash)"
 
 export NVM_DIR="$HOME/.nvm"
 
@@ -140,7 +139,7 @@ alias onefetch='onefetch --number-of-file-churns 0 --no-color-palette --exclude 
 alias cal='cal -y'
 
 # Files
-alias f='superfile'
+alias f='fuck'
 
 # Use nvim for man pages
 man() {
@@ -445,6 +444,10 @@ trim() {
 export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
 
 . "$HOME/.cargo/env"
+
+eval "$(zoxide init bash)"
+
+eval "$(thefuck --alias)"
 
 # Attach ble.sh. Must be at bottom
 [[ ${BLE_VERSION-} ]] && ble-attach

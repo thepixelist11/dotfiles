@@ -29,10 +29,12 @@ fi
 
 ext="${background##*.}"
 
+echo "$background" > "/home/ben/scripts/wallpaper/last_wallpaper"
+
 killall mpvpaper
 
 # set the background
-# if [ ! -z "$(ps -e | grep waypaper)" ]; then
+if [ ! -z "$(ps -e | grep waypaper)" ]; then
   if [[ "$ext" = "mp4" ]]; then
     mpv_args="--no-audio --loop --vf=cropdetect"
     hyprctl monitors | grep -oP '(?<=Monitor )\S+' | while read -r monitor; do
@@ -47,11 +49,9 @@ killall mpvpaper
       hyprctl hyprpaper wallpaper "$monitor, $background"
     done
   fi
-# fi
+fi
 
 wal -i "$background"
-
-echo "$background" > "/home/ben/scripts/wallpaper/last_wallpaper"
 
 # wpg
 wpg_files=$(wpg -l)

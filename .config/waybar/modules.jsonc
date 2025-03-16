@@ -38,6 +38,22 @@
             "on-click-right": "mode"
         }
     },
+    "group/tray-cont": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/tray-icon",
+            "tray"
+        ]
+    },
+    "custom/tray-icon": {
+        "format": "❙",
+        "tooltip-format": "Tray"
+    },
     "tray": {
         "spacing": 10,
         "on-click": ""
@@ -229,7 +245,7 @@
         },
         "modules": [
             "custom/firefox",
-            "custom/chatgpt",
+            "custom/chatgpt"
         ]
     },
     // Power
@@ -246,7 +262,7 @@
             "transition-left-to-right": false
         },
         "modules": [
-            "custom/poweroff",
+            "custom/poweroff"
         ]
     }
 }

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exit 0
+
 POWER_STATE=$(cat "/sys/class/power_supply/ACAD/online")
 
 if [ "$POWER_STATE" -eq 1 ]; then

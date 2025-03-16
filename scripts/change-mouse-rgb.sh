@@ -45,7 +45,7 @@ ratbagctl --nocommit "$ID" button 4 action set button 5
 ratbagctl --nocommit "$ID" button 5 action set special 'resolution-alternate'
 ratbagctl --nocommit "$ID" button 6 action set macro 'KEY_F'
 ratbagctl --nocommit "$ID" button 7 action set macro '+KEY_LEFTCTRL' 'KEY_W' '-KEY_LEFTCTRL'
-ratbagctl --nocommit "$ID" button 8 action set special 'second-mode'
+ratbagctl --nocommit "$ID" button 8 action set key 'KEY_F24'
 ratbagctl --nocommit "$ID" button 9 action set special 'wheel-right'
 ratbagctl --nocommit "$ID" button 10 action set special 'wheel-left'
 

@@ -176,6 +176,8 @@ label:focus {
 #idle_inhibitor,
 #scratchpad,
 #mpris,
+#tray-cont,
+#tray-icon,
 #mpd {
   margin: 2px;
   padding-left: 4px;
@@ -188,6 +190,10 @@ label:focus {
 #cava {
   color: @color2;
   font-size: 12px;
+}
+
+#tray {
+  background: transparent;
 }
 
 #custom-cliphist,

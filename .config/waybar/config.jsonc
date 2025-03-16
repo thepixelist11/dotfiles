@@ -28,7 +28,7 @@
         //"group/hardware",
         //"group/tools",
         //"group/links",
-        "tray",
+        "group/tray-cont",
         "clock"
         //"group/power"
     ]

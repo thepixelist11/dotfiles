@@ -57,6 +57,7 @@ return {
   {
     'bullets-vim/bullets.vim',
     ft = { 'markdown', 'text', 'gitcommit' },
+    bullets_renumber_on_change = 0,
   },
 
   {
