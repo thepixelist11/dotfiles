@@ -15,6 +15,7 @@
     ./nixos/modules/wireguard.nix
     ./nixos/modules/zen-browser.nix
     ./nixos/modules/hyprland.nix
+    ./nixos/modules/virtualization.nix
   ];
 
   # Bootloader.
@@ -23,6 +24,11 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  boot.kernelParams = [
+    "nvidia-drm.modeset=1"
+    "nvidia-drm.fbdev=1"
+  ];
 
   networking.hostName = "ben";
   networking.wireless.enable = true;
@@ -42,6 +48,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
   };
 
