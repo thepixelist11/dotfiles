@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/ben";
 
   home.packages = with pkgs; [
-    kdePackages.breeze-icons
+    kdePackages.breeze
   ];
 
   programs.thunderbird.enable = true;

@@ -15,20 +15,10 @@ hl.monitor({
 })
 
 hl.monitor({
-	output = "DP-1",
+	output = "DP-5",
 	mode = "3440x1440@143.964996",
 	position = "1925x990",
 	scale = 1.0,
-})
-
-hl.monitor({
-	output = "DP-2",
-	mode = "1920x1080@140",
-	position = "5365x980",
-	scale = 1,
-	transform = 3,
-	vrr = 0,
-	bitdepth = 8,
 })
 
 hl.monitor({
