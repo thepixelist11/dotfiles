@@ -59,4 +59,6 @@
   programs.nix-ld.enable = true;
 
   programs.zsh.enable = true;
+
+  programs.direnv.enable = true;
 }

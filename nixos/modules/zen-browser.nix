@@ -1,4 +1,9 @@
-{ inputs, pkgs, lib, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   extension = shortId: guid: {
@@ -9,9 +14,7 @@ let
     };
   };
 
-  prefs = {
-    "extensions.pocket.enabled" = false;
-  };
+  prefs = { };
 
   extensions = [
     (extension "ublock-origin" "uBlock0@raymondhill.net")
@@ -36,7 +39,7 @@ in
       {
         extraPrefs = lib.concatLines (
           lib.mapAttrsToList (
-            name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
+            name: value: "lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});"
           ) prefs
         );
 

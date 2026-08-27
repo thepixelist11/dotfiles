@@ -15,7 +15,6 @@ hl.on("hyprland.start", function()
 		"cd ~/Documents/programming/ts-js/wallpaper-server/ ; node ~/Documents/programming/ts-js/wallpaper-server/main.js"
 	)
 	hl.exec_cmd("systemctl --user start xppentablet")
-	hl.exec_cmd("hyprpm reload -n")
 	hl.exec_cmd("syshud -T 10 -p bottom -t 3")
 	hl.exec_cmd("walker --gapplication-service")
 	hl.exec_cmd("hyprctl setcursor breeze 24")
