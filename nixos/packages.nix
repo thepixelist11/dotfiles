@@ -42,6 +42,8 @@
     volta
     python3
     go
+    cargo
+    rustc
 
     # Desktop Environment
     hyprpaper
