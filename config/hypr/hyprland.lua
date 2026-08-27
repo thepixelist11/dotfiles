@@ -1,0 +1,8 @@
+require("hyprland.animations")
+require("hyprland.exec-once")
+require("hyprland.env")
+require("hyprland.window-rules")
+require("hyprland.monitors")
+require("hyprland.binds")
+require("hyprland.gestures")
+require("hyprland.general")
