@@ -21,6 +21,7 @@
     zoxide
     fd
     difftastic
+    jq
 
     # Archiving
     unzip
@@ -46,6 +47,7 @@
     # Desktop Environment
     hyprpaper
     wl-clipboard
+    cliphist
     wofi
 
     # Misc
