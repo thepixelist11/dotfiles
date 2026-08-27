@@ -204,8 +204,8 @@ alias kt_pywal='kitten themes Pywal'
 # Open via Hyprland
 alias op='hyprctl dispatch -- exec'
 
-# Print PKGBUILD for a particular package
-alias pkgb='yay -G --print'
+# Nix
+alias np='nix search nixpkgs'
 
 # Hyprland Notifications
 alias n_warn='hyprctl notify 0 5000 0'

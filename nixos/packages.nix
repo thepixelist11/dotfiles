@@ -33,7 +33,6 @@
 
     # Terminal
     kitty
-    zsh
 
     # Development
     gcc
@@ -56,4 +55,6 @@
 
   # Enabled for Volta
   programs.nix-ld.enable = true;
+
+  programs.zsh.enable = true;
 }

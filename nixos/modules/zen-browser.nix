@@ -16,6 +16,16 @@ let
   extensions = [
     (extension "ublock-origin" "uBlock0@raymondhill.net")
     (extension "vimium-ff" "{d7742d87-e61d-4b78-b8a1-b469842139fa}")
+    (extension "darkreader" "addon@darkreader.org")
+    (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
+    (extension "return-youtube-dislikes" "{762f9885-5a13-4abd-9c77-433dcd38b8fd}")
+    (extension "sponsorblock" "sponsorBlocker@ajay.app")
+    (extension "enhancer-for-youtube" "enhancerforyoutube@maximerf.addons.mozilla.org")
+    (extension "user-agent-string-switcher" "{a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7}")
+    (extension "karakeep" "addon@karakeep.app")
+    (extension "copy-as-markdown" "jid1-tfBgelm3d4bLkQ@jetpack")
+    (extension "tubearchivist-companion" "{08f0f80f-2b26-4809-9267-287a5bdda2da}")
+    (extension "tabdetach" "tabenhanced@firefox")
   ];
 
 in

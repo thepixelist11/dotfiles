@@ -34,5 +34,14 @@
 
       videoDrivers = [ "modesetting" "nvidia" ];
     };
+
+    tlp = {
+      enable = true;
+
+      settings = {
+        INTEL_GPU_MIN_FREQ_ON_AC = 500;
+        INTEL_GPU_MIN_FREQ_ON_BAT = 300;
+      };
+    };
   };
 }
