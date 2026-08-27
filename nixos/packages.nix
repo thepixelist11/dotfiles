@@ -19,8 +19,7 @@
     zsh
     
     # Web Browsers
-    qutebrowser
-    zen-browser
+    inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
   ];
 
   programs.hyprland.enable = true;

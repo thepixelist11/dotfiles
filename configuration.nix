@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./nixos/packages.nix
       ./nixos/services.nix
+      ./nixos/modules/zen-browser.nix
     ];
 
   # Bootloader.
