@@ -4,25 +4,40 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }: {
-    nixosConfigurations = {
-      ben = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+  outputs =
+    inputs@{ self, nixpkgs, ... }:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations = {
+        ben = nixpkgs.lib.nixosSystem {
+          inherit system;
 
-        specialArgs = {
-          inherit inputs;
+          specialArgs = {
+            inherit inputs;
+          };
+
+          modules = [
+            ./configuration.nix
+
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.users.ben = import ./home.nix;
+            }
+          ];
         };
-
-        modules = [
-          ./configuration.nix
-        ];
       };
     };
-  };
 }

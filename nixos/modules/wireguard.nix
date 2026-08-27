@@ -1,5 +1,5 @@
 {
   networking.wg-quick.interfaces = {
-    homelab.configFile = ../../../wireguard/homelab.conf;
+    homelab.configFile = "/home/ben/wireguard/homelab.conf";
   };
 }

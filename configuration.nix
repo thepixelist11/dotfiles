@@ -5,17 +5,17 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./nixos/fonts.nix
-      ./nixos/systemd.nix
-      ./nixos/packages.nix
-      ./nixos/services.nix
-      ./nixos/modules/nvidia.nix
-      ./nixos/modules/zen-browser.nix
-      ./nixos/modules/hyprland.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./nixos/fonts.nix
+    ./nixos/systemd.nix
+    ./nixos/packages.nix
+    ./nixos/services.nix
+    ./nixos/modules/nvidia.nix
+    ./nixos/modules/wireguard.nix
+    ./nixos/modules/zen-browser.nix
+    ./nixos/modules/hyprland.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -39,15 +39,20 @@
     isNormalUser = true;
     description = "Ben";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Enable Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
