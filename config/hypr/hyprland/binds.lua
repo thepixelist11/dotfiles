@@ -2,6 +2,7 @@ local mainMod = "SUPER"
 
 local terminal = "kitty"
 local fileManager = "thunar"
+local email = "thunderbird"
 local browser = "zen"
 local menu = 'wofi --show drun -i -I -b -a -p " " --conf ~/.config/wofi/wofi.conf --style ~/.config/wofi/style.css'
 
@@ -16,7 +17,7 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(browser .. " --private-window"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(email))
 
 -- Notifications
 

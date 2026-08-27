@@ -30,6 +30,14 @@
     "nvidia-drm.fbdev=1"
   ];
 
+  boot.loader.systemd-boot.configurationLimit = 10;
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   networking.hostName = "ben";
   networking.wireless.enable = true;
 
