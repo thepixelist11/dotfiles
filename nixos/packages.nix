@@ -20,6 +20,7 @@
     trash-cli
     zoxide
     fd
+    difftastic
 
     # Archiving
     unzip
@@ -50,4 +51,7 @@
     # Misc
     tree-sitter
   ];
+
+  # Enabled for Volta
+  programs.nix-ld.enable = true;
 }
