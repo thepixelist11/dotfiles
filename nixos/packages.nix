@@ -17,9 +17,6 @@
     # Terminal
     kitty
     zsh
-    
-    # Web Browsers
-    inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
   ];
 
   programs.hyprland.enable = true;
