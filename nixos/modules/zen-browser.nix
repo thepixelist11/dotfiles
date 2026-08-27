@@ -15,6 +15,7 @@ let
 
   extensions = [
     (extension "ublock-origin" "uBlock0@raymondhill.net")
+    (extension "vimium-ff" "{d7742d87-e61d-4b78-b8a1-b469842139fa}")
   ];
 
 in
@@ -31,13 +32,39 @@ in
 
         extraPolicies = {
           DisableTelemetry = true;
+          DisableFirefoxStudies = true;
+          DisableFirefoxScreenshots = true;
+          DisablePocket = true;
+          DisableAccounts = true;
+          DisableFirefoxAccounts = true;
+          DisableRemoteImprovements = true;
+          DisableFormHistory = true;
+          SearchSuggestEnabled = false;
+
           ExtensionSettings = builtins.listToAttrs extensions;
+
+          NoDefaultBookmarks = true;
+
+          AllowFileSelectionDialogs = true;
+          DisableFeedbackCommands = true;
+          PromptForDownloadLocation = true;
+
+          PasswordManagerEnabled = false;
+          AutofillCreditCardEnabled = false;
+          AutofillAddressEnabled = false;
+
+          EnableTrackingProtection = {
+            Value = true;
+            Locked = true;
+            Cryptomining = true;
+            Fingerprinting = true;
+          };
 
           SearchEngines = {
             Default = "ddg";
             Add = [
               {
-                Name = "nixpkgs packages";
+                Name = "NixOS packages";
                 URLTemplate = "https://search.nixos.org/packages?query={searchTerms}";
                 IconURL = "https://wiki.nixos.org/favicon.ico";
                 Alias = "@np";
@@ -63,7 +90,7 @@ in
             ];
           };
         };
-      };
+      }
     )
   ];
 }

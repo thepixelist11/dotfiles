@@ -8,7 +8,7 @@ hl.monitor({
 })
 
 hl.monitor({
-	output = "eDP-2",
+	output = "eDP-1",
 	mode = "2560x1600@240",
 	position = "0x1380",
 	scale = 1.333333,
@@ -46,7 +46,7 @@ hl.monitor({
 hl.workspace_rule({
 	workspace = "1",
 	persistent = true,
-	monitor = "eDP-2",
+	monitor = "eDP-1",
 })
 
 hl.workspace_rule({

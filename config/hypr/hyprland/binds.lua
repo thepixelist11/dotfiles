@@ -2,7 +2,7 @@ local mainMod = "SUPER"
 
 local terminal = "kitty"
 local fileManager = "thunar"
-local browser = "qutebrowser"
+local browser = "zen"
 local menu = 'wofi --show drun -i -I -b -a -p " " --conf ~/.config/wofi/wofi.conf --style ~/.config/wofi/style.css'
 
 -- General

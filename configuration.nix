@@ -8,9 +8,13 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./nixos/fonts.nix
+      ./nixos/systemd.nix
       ./nixos/packages.nix
       ./nixos/services.nix
+      ./nixos/modules/nvidia.nix
       ./nixos/modules/zen-browser.nix
+      ./nixos/modules/hyprland.nix
     ];
 
   # Bootloader.
@@ -29,12 +33,6 @@
   # Regional Settings
   time.timeZone = "America/Toronto";
   i18n.defaultLocale = "en_CA.UTF-8";
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."ben" = {

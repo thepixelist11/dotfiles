@@ -22,7 +22,7 @@
 #   neovim, kitty, less, bat, eza, dust, tree, tty-clock, fastfetch, trash-cli
 #
 # Shell enhancements:
-#   zoxide, thefuck
+#   zoxide
 #
 # Programming Languages & runtimes:
 #   nodejs, npm, nvm, deno, rust (cargo), cuda toolkit, nvidia drivers,
@@ -61,9 +61,6 @@ fi
 # =============================
 
 # Prepend local bins
-export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:/opt/cuda/bin:$PATH"
-export PATH="$PATH:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
-export PATH="$PATH:$HOME/opt/cross/bin"
 export PATH="$HOME/.volta/bin:$PATH"
 
 # CUDA / NVIDIA
@@ -112,9 +109,6 @@ setopt GLOBDOTS
 
 # zoxide (fast `cd` alternative)
 eval "$(zoxide init zsh)"
-
-# tf
-eval "$(thefuck --alias)"
 
 # Source ble.sh (optional - can be slow)
 # source ~/ble.sh/out/ble.sh --noattach
@@ -189,7 +183,6 @@ alias :q='exit'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias home='cd ~'
 alias dots='nvim ~/dotfiles/'
 alias notes='cd ~/Documents/School/University/1B/ && nvim ~/Documents/School/University/1B'
 alias zshrc='nvim ~/.zshrc'
@@ -292,4 +285,3 @@ source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh

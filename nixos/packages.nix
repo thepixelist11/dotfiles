@@ -13,11 +13,41 @@
     btop
     tree
     fastfetch
-    
+    eza
+    bat
+    dust
+    tty-clock
+    trash-cli
+    zoxide
+    fd
+
+    # Archiving
+    unzip
+    gzip
+    bzip2
+    unrar
+    p7zip
+    ncompress
+
     # Terminal
     kitty
     zsh
-  ];
 
-  programs.hyprland.enable = true;
+    # Development
+    gcc
+    gnumake
+    binutils
+    gdb
+    volta
+    python3
+    go
+
+    # Desktop Environment
+    hyprpaper
+    wl-clipboard
+    wofi
+
+    # Misc
+    tree-sitter
+  ];
 }
