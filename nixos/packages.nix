@@ -22,6 +22,7 @@
     fd
     difftastic
     jq
+    ripgrep
 
     # Archiving
     unzip
