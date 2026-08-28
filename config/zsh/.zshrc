@@ -46,9 +46,6 @@
 
 # ====================================================================================
 
-# Set up direnv before p10k
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -58,9 +55,6 @@ fi
 
 # Exit early if not interactive
 [[ -o interactive ]] || return
-
-# Enable direnv hook.
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
 
 # =============================
 # PATHS & ENVIRONMENT
