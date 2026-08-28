@@ -1,6 +1,5 @@
 (defcfg
     process-unmapped-keys yes
-    linux-dev /dev/input/by-id/usb-ITE_Tech._Inc._ITE_Device_8258_-event-kbd:/dev/input/by-id/usb-Corsair_CORSAIR_K70_RGB_PRO_Mechanical_Gaming_Keyboard_F500190762268C71AB39906803020029-event-kbd
 )
 
 (defvar
