@@ -32,7 +32,10 @@
         variant = "";
       };
 
-      videoDrivers = [ "modesetting" "nvidia" ];
+      videoDrivers = [
+        "modesetting"
+        "nvidia"
+      ];
     };
 
     tlp = {
