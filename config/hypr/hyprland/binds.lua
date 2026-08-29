@@ -29,7 +29,7 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/scripts/cliphist.sh"))
 
 -- LibreOffice
 
-hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("libreoffice"))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obsidian"))
 
 -- Theme
 
