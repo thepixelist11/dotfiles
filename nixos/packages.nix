@@ -23,6 +23,7 @@
     difftastic
     jq
     ripgrep
+    file
 
     # Archiving
     unzip

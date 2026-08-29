@@ -10,6 +10,8 @@
     kdePackages.breeze
     brightnessctl
     hyprsunset
+    remmina
+    obsidian
   ];
 
   programs.thunderbird.enable = true;
