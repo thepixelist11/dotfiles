@@ -15,6 +15,8 @@
     obsidian
     pywal16
     libqalculate
+    grimblast
+    qimgv
   ];
 
   programs.thunderbird.enable = true;
@@ -42,6 +44,7 @@
 
   home.sessionVariables = {
     WALLPAPER_DIR = "${config.home.homeDirectory}/Media/Wallpaper";
+    GRIM_DEFAULT_DIR = "{config.home.homeDirectory}/Media/Screenshots";
   };
 
   home.stateVersion = "25.11";

@@ -5,6 +5,7 @@ local fileManager = "thunar"
 local email = "thunderbird"
 local browser = "zen"
 local menu = 'wofi --show drun -i -I -b -a -p " " --conf ~/.config/wofi/wofi.conf --style ~/.config/wofi/style.css'
+local screenshot = [[grimblast copysave area "$HOME/Media/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S.png')"]]
 
 -- General
 
@@ -37,11 +38,7 @@ hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("waypaper"))
 
 -- Screenshots
 
-hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)"'))
-
--- OCR
-
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd('grim -g "$(slurp)" - | tesseract - - -l eng | wl-copy'))
+hl.bind("Print", hl.dsp.exec_cmd(screenshot))
 
 -- Focus movement
 
