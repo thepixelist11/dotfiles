@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }:
 {
@@ -12,6 +13,8 @@
     hyprsunset
     remmina
     obsidian
+    pywal16
+    libqalculate
   ];
 
   programs.thunderbird.enable = true;
@@ -35,6 +38,10 @@
         }
       ];
     };
+  };
+
+  home.sessionVariables = {
+    WALLPAPER_DIR = "${config.home.homeDirectory}/Media/Wallpaper";
   };
 
   home.stateVersion = "25.11";
