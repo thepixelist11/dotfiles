@@ -17,6 +17,9 @@
     libqalculate
     grimblast
     qimgv
+    wofi
+    awww
+    waypaper
   ];
 
   programs.thunderbird.enable = true;

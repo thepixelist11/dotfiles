@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+DEFAULT_DIRECTORY="$HOME/Media/Wallpaper"
+INPUT_PATH="${1:-}"
+
+WALLPAPER_DIR="$HOME/.cache/wal"
+LAST_WALLPAPER="$WALLPAPER_DIR/last_wallpaper"
+
+mkdir -p "$WALLPAPER_DIR"
+
+if [[ -n "$INPUT_PATH" ]]; then
+    if [[ -f "$INPUT_PATH" ]]; then
+        BACKGROUND="$INPUT_PATH"
+    elif [[ -d "$INPUT_PATH" ]]; then
+        BACKGROUND="$(
+            find "$INPUT_PATH" -maxdepth 1 -type f \
+                \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) |
+                shuf -n 1
+        )"
+    else
+        echo "The specified path must be a fiile or directory." >&2
+        exit 1
+    fi
+else
+    if [[ -d "$DEFAULT_DIRECTORY" ]]; then
+        BACKGROUND="$(
+            find "$DEFAULT_DIRECTORY" -maxdepth 1 -type f \
+                \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) |
+                shuf -n 1
+        )"
+    else
+        echo "Default directory $DEFAULT_DIRECTORY does not exist." >&2
+        exit 1
+    fi
+fi
+
+if [[ -z "${BACKGROUND:-}" ]]; then
+    echo "No wallpaper found." >&2
+    exit 1
+fi
+
+printf '%s\n' "$BACKGROUND" >"$LAST_WALLPAPER"
+
+echo "Setting wallpaper: $BACKGROUND"
+
+awww img \
+    --transition-type center \
+    --transition-step 90 \
+    --transition-fps 120 \
+    "$BACKGROUND"
+
+echo "Generating Pywal palette"
+
+wal -n --cols16 -i "$BACKGROUND"
+
+echo "Updating kitty"
+kitten themes Pywal

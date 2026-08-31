@@ -192,7 +192,7 @@ alias hyprconf='nvim ~/.config/hypr'
 alias gs='git status'
 alias ga='git add .'
 alias gpom='git push origin main'
-alias gl='git log --pretty=format:"%h %an %ad %s" --date=short'
+alias gl='git log --pretty=format:"%h %an <%ae> %ad %s" --date=short'
 
 # Reload shell
 alias r='source ~/.zshrc && clear && fastfetch'

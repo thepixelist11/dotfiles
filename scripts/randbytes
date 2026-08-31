@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const crypto = require("crypto");
+const bytes = Math.floor(Number(process.argv[2])) || 32;
+
+if (Number.isNaN(bytes) || bytes <= 0)
+    throw new Error("Expected a natural number of bytes.");
+
+console.log(crypto.randomBytes(bytes).toString("hex"));

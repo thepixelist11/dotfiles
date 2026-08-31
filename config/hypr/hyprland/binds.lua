@@ -196,10 +196,10 @@ hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("xournalpp"))
 
 -- Hyprsunset
 
-hl.bind(mainMod .. " + F5", hl.dsp.exec_cmd("hyprctl hyprsunset gamma -10"))
-hl.bind(mainMod .. " + F6", hl.dsp.exec_cmd("hyprctl hyprsunset gamma +10"))
-hl.bind(mainMod .. " + F7", hl.dsp.exec_cmd("hyprctl hyprsunset temperature -500"))
-hl.bind(mainMod .. " + F8", hl.dsp.exec_cmd("hyprctl hyprsunset temperature +500"))
+hl.bind(mainMod .. " + F5", hl.dsp.exec_cmd("hyprctl hyprsunset gamma -10"), { repeating = true })
+hl.bind(mainMod .. " + F6", hl.dsp.exec_cmd("hyprctl hyprsunset gamma +10"), { repeating = true })
+hl.bind(mainMod .. " + F7", hl.dsp.exec_cmd("hyprctl hyprsunset temperature -500"), { repeating = true })
+hl.bind(mainMod .. " + F8", hl.dsp.exec_cmd("hyprctl hyprsunset temperature +500"), { repeating = true })
 
 -- Music Player
 

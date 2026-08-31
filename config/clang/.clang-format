@@ -1,0 +1,78 @@
+BasedOnStyle: Mozilla
+
+IndentWidth: 4
+ColumnLimit: 90
+DisableFormat: false
+
+AlignArrayOfStructures: Left
+AlignConsecutiveAssignments:
+    Enabled: true
+    AcrossEmptyLines: false
+    AcrossComments: true
+AlignConsecutiveDeclarations:
+    Enabled: true
+    AcrossEmptyLines: false
+    AcrossComments: true
+AlignEscapedNewlines: Left
+AlignOperands: AlignAfterOperator
+
+AlignTrailingComments:
+    Kind: Always
+    OverEmptyLines: 2
+
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+
+AllowShortBlocksOnASingleLine: Always
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortEnumsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: true
+
+AlwaysBreakBeforeMultilineStrings: false
+
+BinPackArguments: true
+
+BreakAdjacentStringLiterals: true
+BreakArrays: true
+BreakBeforeBraces: Attach
+BreakBeforeConceptDeclarations: Never
+BreakConstructorInitializers: BeforeColon
+
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakAfterReturnType: None
+
+DerivePointerAlignment: true
+
+IncludeBlocks: Preserve
+
+IndentCaseBlocks: false
+IndentCaseLabels: true
+IndentPPDirectives: None
+NamespaceIndentation: All
+
+InsertNewlineAtEOF: true
+
+PointerAlignment: Left
+ReferenceAlignment: Right
+
+QualifierAlignment: Left
+
+SortIncludes: CaseInsensitive
+
+SpaceAfterLogicalNot: false
+SpaceAfterCStyleCast: false
+SpaceAfterTemplateKeyword: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCaseColon: false
+SpaceBeforeInheritanceColon: true
+SpaceBeforeJsonColon: false
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceBeforeSquareBrackets: false
+SpaceInEmptyBlock: false
+SpacesInAngles: Never
+SpacesInContainerLiterals: true
+

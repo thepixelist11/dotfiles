@@ -48,10 +48,8 @@
     rustc
 
     # Desktop Environment
-    hyprpaper
     wl-clipboard
     cliphist
-    wofi
 
     # Misc
     tree-sitter
