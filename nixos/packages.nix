@@ -24,6 +24,7 @@
     jq
     ripgrep
     file
+    nftables
 
     # Archiving
     unzip

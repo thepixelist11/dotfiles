@@ -21,6 +21,7 @@
     awww
     waypaper
     glib
+    gowall
   ];
 
   programs.thunderbird.enable = true;

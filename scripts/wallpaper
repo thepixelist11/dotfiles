@@ -9,6 +9,8 @@ WALLPAPER_DIR="$HOME/.cache/wal"
 LAST_WALLPAPER="$WALLPAPER_DIR/last_wallpaper"
 LAST_WALLPAPER_PATH="$WALLPAPER_DIR/last_wallpaper_path"
 
+THEME="tokyo-storm"
+
 mkdir -p "$WALLPAPER_DIR"
 
 if [[ -n "$INPUT_PATH" ]]; then
@@ -41,6 +43,11 @@ if [[ -z "${BACKGROUND:-}" ]]; then
     echo "No wallpaper found." >&2
     exit 1
 fi
+
+echo "Converting wallpaper to theme '$THEME'"
+gowall convert "$BACKGROUND" -t "$THEME"
+
+BACKGROUND="$HOME/Media/Gowall/$(basename "$BACKGROUND")"
 
 cp -f "$BACKGROUND" "$LAST_WALLPAPER"
 printf '%s\n' "$BACKGROUND" >"$LAST_WALLPAPER_PATH"
