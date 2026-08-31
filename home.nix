@@ -20,6 +20,7 @@
     wofi
     awww
     waypaper
+    glib
   ];
 
   programs.thunderbird.enable = true;

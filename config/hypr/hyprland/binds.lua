@@ -26,7 +26,7 @@ hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client -t"))
 
 -- Clipboard
 
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/scripts/cliphist.sh"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/scripts/cliphist"))
 
 -- LibreOffice
 
@@ -167,20 +167,16 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 -- Brightness
 
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/scripts/changeBrightness.sh sub"), { locked = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/scripts/changeBrightness.sh"), { locked = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/scripts/changeBrightness sub"), { locked = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/scripts/changeBrightness"), { locked = true })
 
 -- Calculator
 
 hl.bind("XF86Calculator", hl.dsp.exec_cmd("qalculate-gtk"))
 
--- Ashell
-
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("/home/ben/scripts/toggleBar.sh"))
-
 -- Lock
 
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("~/scripts/lock"))
 
 -- Opacity
 

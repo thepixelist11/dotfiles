@@ -7,6 +7,7 @@ INPUT_PATH="${1:-}"
 
 WALLPAPER_DIR="$HOME/.cache/wal"
 LAST_WALLPAPER="$WALLPAPER_DIR/last_wallpaper"
+LAST_WALLPAPER_PATH="$WALLPAPER_DIR/last_wallpaper_path"
 
 mkdir -p "$WALLPAPER_DIR"
 
@@ -41,7 +42,8 @@ if [[ -z "${BACKGROUND:-}" ]]; then
     exit 1
 fi
 
-printf '%s\n' "$BACKGROUND" >"$LAST_WALLPAPER"
+cp -f "$BACKGROUND" "$LAST_WALLPAPER"
+printf '%s\n' "$BACKGROUND" >"$LAST_WALLPAPER_PATH"
 
 echo "Setting wallpaper: $BACKGROUND"
 
@@ -53,7 +55,11 @@ awww img \
 
 echo "Generating Pywal palette"
 
-wal -n --cols16 -i "$BACKGROUND"
+if [[ $(<"$HOME/.theme") == "light" ]]; then
+    wal -n --cols16 -i "$BACKGROUND" -l
+else
+    wal -n --cols16 -i "$BACKGROUND"
+fi
 
 echo "Updating kitty"
 kitten themes Pywal

@@ -30,6 +30,9 @@ nmap <C-w><C-l> :obcommand<space>editor:focus-right<CR>
 exmap toggleleft obcommand app:toggle-left-sidebar
 nmap <Space>e :toggleleft<CR>
 
+exmap togglecheck obcommand editor:toggle-checklist-status
+nmap <Space>tt :togglecheck<CR>
+
 exmap close obcommand workspace:close
 nmap <Space>bd :close<CR>
 

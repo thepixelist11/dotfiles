@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if hyprctl monitors | grep -q '^Monitor DP-5'; then
+    printf '$monitor = DP-5\n' >/tmp/hyprlock-monitor.conf
+else
+    printf '$monitor = eDP-1\n' >/tmp/hyprlock-monitor.conf
+fi
+
+hyprlock

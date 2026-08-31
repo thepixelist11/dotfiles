@@ -1,3 +1,35 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
+case "${1:-}" in
+light)
+    SCHEME='prefer-light'
+    GTK3_DARK='false'
+    GTK4_SCHEME='light'
+    ;;
+dark)
+    SCHEME='prefer-dark'
+    GTK3_DARK='true'
+    GTK4_SCHEME='dark'
+    ;;
+*)
+    echo "Expected either 'light' or 'dark'" >&2
+    exit 1
+    ;;
+esac
 
+dconf write /org/gnome/desktop/interface/color-scheme "'$SCHEME'"
+
+mkdir -p "$HOME/.config/gtk-3.0"
+{
+    echo '[Settings]'
+    echo "gtk-application-prefer-dark-theme=$GTK3_DARK"
+} >"$HOME/.config/gtk-3.0/settings.ini"
+
+mkdir -p "$HOME/.config/gtk-4.0"
+{
+    echo '[Settings]'
+    echo "gtk-interface-color-scheme=$GTK4_SCHEME"
+} >"$HOME/.config/gtk-4.0/settings.ini"
+
+printf '%s\n' "$1" >"$HOME/.theme"
