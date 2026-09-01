@@ -23,6 +23,7 @@
     glib
     gowall
     eww
+    tokei
   ];
 
   programs.thunderbird.enable = true;
@@ -41,8 +42,8 @@
         }
         {
           time = "21:00";
-          temperature = 4500;
-          gamma = 0.7;
+          temperature = 5000;
+          gamma = 1;
         }
       ];
     };
