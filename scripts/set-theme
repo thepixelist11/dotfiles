@@ -18,6 +18,8 @@ dark)
     ;;
 esac
 
+printf '%s\n' "$1" >"$HOME/.theme"
+
 dconf write /org/gnome/desktop/interface/color-scheme "'$SCHEME'"
 
 mkdir -p "$HOME/.config/gtk-3.0"
@@ -32,4 +34,7 @@ mkdir -p "$HOME/.config/gtk-4.0"
     echo "gtk-interface-color-scheme=$GTK4_SCHEME"
 } >"$HOME/.config/gtk-4.0/settings.ini"
 
-printf '%s\n' "$1" >"$HOME/.theme"
+/home/ben/scripts/wallpaper \
+    "$(<"$HOME/.cache/wal/last_wallpaper_path")" \
+    --theme "$1" \
+    --immediate

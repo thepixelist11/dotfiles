@@ -1,15 +1,88 @@
 #!/usr/bin/env bash
-
 set -euo pipefail
 
 DEFAULT_DIRECTORY="$HOME/Media/Wallpaper"
-INPUT_PATH="${1:-}"
+INPUT_PATH=""
+THEME=""
+MODE=""
+IMMEDIATE=false
+INVERT=true
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+    --theme)
+        if [[ $# -lt 2 ]]; then
+            echo "--theme requires either 'light' or 'dark'" >&2
+            exit 1
+        fi
+
+        case "$2" in
+        light)
+            THEME="tokyo-day"
+            MODE="light"
+            ;;
+        dark)
+            THEME="tokyo-storm"
+            MODE="dark"
+            ;;
+        *)
+            echo "--theme must be either 'light' or 'dark'" >&2
+            exit 1
+            ;;
+        esac
+
+        shift 2
+        ;;
+    --immediate)
+        IMMEDIATE=true
+        shift
+        ;;
+    --no-invert)
+        INVERT=false
+        shift
+        ;;
+    --)
+        shift
+        INPUT_PATH="${1:-}"
+        shift || true
+        break
+        ;;
+    -*)
+        echo "Unknown option: $1" >&2
+        exit 1
+        ;;
+    *)
+        if [[ -n "$INPUT_PATH" ]]; then
+            echo "Too many positional arguments." >&2
+            exit 1
+        fi
+
+        INPUT_PATH="$1"
+        shift
+        ;;
+    esac
+done
+
+if [[ -z "$THEME" ]]; then
+    case "$(<"$HOME/.theme")" in
+    light)
+        THEME="tokyo-day"
+        MODE="light"
+        ;;
+    dark)
+        THEME="tokyo-storm"
+        MODE="dark"
+        ;;
+    *)
+        echo "Invalid theme in $HOME/.theme" >&2
+        exit 1
+        ;;
+    esac
+fi
 
 WALLPAPER_DIR="$HOME/.cache/wal"
 LAST_WALLPAPER="$WALLPAPER_DIR/last_wallpaper"
 LAST_WALLPAPER_PATH="$WALLPAPER_DIR/last_wallpaper_path"
-
-THEME="tokyo-storm"
 
 mkdir -p "$WALLPAPER_DIR"
 
@@ -23,7 +96,7 @@ if [[ -n "$INPUT_PATH" ]]; then
                 shuf -n 1
         )"
     else
-        echo "The specified path must be a fiile or directory." >&2
+        echo "The specified path must be a file or directory." >&2
         exit 1
     fi
 else
@@ -44,25 +117,65 @@ if [[ -z "${BACKGROUND:-}" ]]; then
     exit 1
 fi
 
-echo "Converting wallpaper to theme '$THEME'"
-gowall convert "$BACKGROUND" -t "$THEME"
+printf '%s\n' "$BACKGROUND" >"$LAST_WALLPAPER_PATH"
 
-BACKGROUND="$HOME/Media/Gowall/$(basename "$BACKGROUND")"
+GOWALL_PATH="$HOME/Media/Gowall/$(basename "$BACKGROUND")"
+cp -f "$BACKGROUND" "$GOWALL_PATH"
+
+should_invert() {
+    local wallpaper=$1
+    local background hex r g b luminance
+
+    background=$(gowall extract "$wallpaper" | head -n1)
+    hex=${background#\#}
+
+    r=$((16#${hex:0:2}))
+    g=$((16#${hex:2:2}))
+    b=$((16#${hex:4:2}))
+
+    luminance=$(((299 * r + 587 * g + 114 * b) / 1000))
+
+    if ((luminance < 128)); then
+        return 0
+    else
+        return 1
+    fi
+}
+
+echo "Converting wallpaper to theme '$THEME'"
+
+if [[ "$MODE" == "light" && "$INVERT" == true ]]; then
+    if should_invert "$GOWALL_PATH"; then
+        magick "$GOWALL_PATH" \
+            -colorspace HSL \
+            -channel B -negate +channel \
+            -colorspace sRGB \
+            "$GOWALL_PATH"
+    fi
+fi
+
+gowall convert "$GOWALL_PATH" -t "$THEME"
+
+BACKGROUND="$GOWALL_PATH"
 
 cp -f "$BACKGROUND" "$LAST_WALLPAPER"
-printf '%s\n' "$BACKGROUND" >"$LAST_WALLPAPER_PATH"
 
 echo "Setting wallpaper: $BACKGROUND"
 
-awww img \
-    --transition-type center \
-    --transition-step 90 \
-    --transition-fps 120 \
-    "$BACKGROUND"
+if "$IMMEDIATE"; then
+    awww img "$BACKGROUND" \
+        --transition-type none
+else
+    awww img \
+        --transition-type any \
+        --transition-step 90 \
+        --transition-fps 120 \
+        "$BACKGROUND"
+fi
 
 echo "Generating Pywal palette"
 
-if [[ $(<"$HOME/.theme") == "light" ]]; then
+if [[ "$MODE" == "light" ]]; then
     wal -n --cols16 -i "$BACKGROUND" -l
 else
     wal -n --cols16 -i "$BACKGROUND"
@@ -70,3 +183,15 @@ fi
 
 echo "Updating kitty"
 kitten themes Pywal
+
+echo "Updating btop"
+
+if [[ "$MODE" == "light" ]]; then
+    cp -f \
+        "$HOME/.config/btop/themes/all/tokyo-day.theme" \
+        "$HOME/.config/btop/themes/Current.theme"
+else
+    cp -f \
+        "$HOME/.config/btop/themes/all/tokyo-storm.theme" \
+        "$HOME/.config/btop/themes/Current.theme"
+fi

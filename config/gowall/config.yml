@@ -1,3 +1,33 @@
 EnableImagePreviewing: false
 InlineImagePreview: false
 OutputFolder: "Media/Gowall"
+
+themes:
+  - name: "tokyo-day"
+    colors:
+      - "#F52A65"
+      - "#FF4774"
+      - "#B15C00"
+      - "#A27629"
+      - "#8C6C3E"
+      - "#5C8524"
+      - "#587539"
+      - "#007EA8"
+      - "#007197"
+      - "#006A83"
+      - "#2E7DE9"
+      - "#358AFF"
+      - "#7847BD"
+      - "#A463FF"
+      - "#9854F1"
+      - "#E1E2E7"
+      - "#D0D5E3"
+      - "#C1C9DF"
+      - "#C4C8DA"
+      - "#A8AECB"
+      - "#848CB5"
+      - "#68709A"
+      - "#6172B0"
+      - "#3760BF"
+      - "#2E5857"
+      - "#E9E9ED"
