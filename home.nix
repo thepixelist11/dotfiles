@@ -25,6 +25,7 @@
     eww
     tokei
     julia
+    git-credential-manager
   ];
 
   programs.thunderbird.enable = true;

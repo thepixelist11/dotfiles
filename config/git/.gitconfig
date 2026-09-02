@@ -1,0 +1,9 @@
+[user]
+	email = me@bneeb.dev
+	name = Ben
+
+[diff]
+    external = difft
+
+[credential]
+    helper = manager
