@@ -7,3 +7,7 @@
 
 [credential]
     helper = manager
+	credentialStore = secretservice
+
+[credential "https://git.bneeb.dev"]
+	provider = generic
