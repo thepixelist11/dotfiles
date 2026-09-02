@@ -26,6 +26,7 @@
     tokei
     julia
     git-credential-manager
+    zathura
   ];
 
   programs.thunderbird.enable = true;
