@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+WALLPAPER_DIR="$HOME/Media/Wallpaper"
+ANIMATED_WALLPAPER_DIR="$HOME/Media/Wallpaper"
+
+find "$WALLPAPER_DIR" \
+    -type f \
+    \( -iname '*.jpg' -o -iname '*.jpeg' \) \
+    -exec sh -c 'for img; do magick "$img" "${img}.png" && rm "$img"; done' \
+    sh {} +
+
+if [[ "$1" = "true" ]]; then
+    find "$ANIMATED_WALLPAPER_DIR" \
+        -type f \
+        \( -iname '*.mp4' \) \
+        -exec sh -c 'for img; do magick -delay 1 -loop 0 "$img" "${img}.gif" && rm "$img"; done' \
+        sh {} +
+fi

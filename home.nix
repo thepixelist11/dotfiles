@@ -24,6 +24,7 @@
     gowall
     eww
     tokei
+    julia
   ];
 
   programs.thunderbird.enable = true;
