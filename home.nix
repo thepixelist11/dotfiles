@@ -19,7 +19,6 @@
     qimgv
     wofi
     awww
-    waypaper
     glib
     gowall
     eww
@@ -27,6 +26,8 @@
     julia
     git-credential-manager
     zathura
+    rclone
+    calibre
   ];
 
   programs.thunderbird.enable = true;
@@ -51,6 +52,8 @@
       ];
     };
   };
+
+  services.ssh-agent.enable = true;
 
   home.sessionVariables = {
     WALLPAPER_DIR = "${config.home.homeDirectory}/Media/Wallpaper";
