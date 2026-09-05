@@ -60,5 +60,7 @@
     GRIM_DEFAULT_DIR = "{config.home.homeDirectory}/Media/Screenshots";
   };
 
+  home.file.".icons/breeze_cursors".source = "${pkgs.kdePackages.breeze}/share/icons/breeze_cursors";
+
   home.stateVersion = "25.11";
 }

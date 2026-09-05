@@ -15,6 +15,7 @@
     ./nixos/modules/zen-browser.nix
     ./nixos/modules/hyprland.nix
     ./nixos/modules/virtualization.nix
+    ./nixos/modules/steam.nix
   ];
 
   nix.gc = {
