@@ -11,9 +11,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("kanata")
 	hl.exec_cmd("kbuildsycoca6")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
-	hl.exec_cmd(
-		"cd ~/Documents/programming/ts-js/wallpaper-server/ ; node ~/Documents/programming/ts-js/wallpaper-server/main.js"
-	)
+	hl.exec_cmd("cd ~/Projects/ts-js/wallpaper-server/ ; node ~/Projects/ts-js/wallpaper-server/main.js")
 	hl.exec_cmd("systemctl --user start xppentablet")
 	hl.exec_cmd("syshud -T 10 -p bottom -t 3")
 	hl.exec_cmd("walker --gapplication-service")

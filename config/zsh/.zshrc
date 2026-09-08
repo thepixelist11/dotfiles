@@ -254,6 +254,54 @@ extract() {
   done
 }
 
+open() {
+    emulate -L zsh
+    setopt ERR_EXIT NO_UNSET PIPE_FAIL
+
+    if (( $# != 1 )); then
+        print -u2 'usage: open FILE'
+        return 2
+    fi
+
+    local file=$1 mime cmd
+
+    if [[ ! -e $file ]]; then
+        print -u2 "open: no such file: $file"
+        return 1
+    fi
+
+    mime=$(file --brief --mime-type -- "$file") || return
+
+    case $mime in
+        application/pdf)
+            cmd='zathura'
+            ;;
+        image/*)
+            cmd='imv'
+            ;;
+        video/*)
+            cmd='mpv'
+            ;;
+        audio/*)
+            cmd='mpv'
+            ;;
+        text/*)
+            cmd='kitty'
+            ;;
+        application/json|application/xml|application/javascript)
+            cmd='kitty'
+            ;;
+        *)
+            cmd='xdg-open'
+            ;;
+    esac
+
+    local quoted_file
+    printf -v quoted_file '%q' "$file"
+
+    hyprctl eval "hl.exec_cmd(\"$cmd $quoted_file\")"
+}
+
 mkdirg() {
   mkdir $1
   cd $1

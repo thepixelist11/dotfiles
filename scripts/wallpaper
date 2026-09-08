@@ -184,6 +184,9 @@ fi
 echo "Updating kitty"
 kitten themes Pywal
 
+echo "Setting mouse rgb"
+~/scripts/change-mouse-rgb "$(cat ~/.cache/wal/colors | head -n 6 | tail -n -1 | cut -d '#' -f2)"
+
 echo "Updating btop"
 
 if [[ "$MODE" == "light" ]]; then

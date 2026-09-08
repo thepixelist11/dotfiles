@@ -28,6 +28,9 @@
     zathura
     rclone
     calibre
+    waypaper
+    libratbag
+    nodejs_26
   ];
 
   programs.thunderbird.enable = true;
