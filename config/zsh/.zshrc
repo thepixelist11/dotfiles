@@ -277,7 +277,7 @@ open() {
             cmd='zathura'
             ;;
         image/*)
-            cmd='imv'
+            cmd='qimgv'
             ;;
         video/*)
             cmd='mpv'
@@ -286,10 +286,10 @@ open() {
             cmd='mpv'
             ;;
         text/*)
-            cmd='kitty'
+            cmd='kitty nvim --'
             ;;
-        application/json|application/xml|application/javascript)
-            cmd='kitty'
+        application/*)
+            cmd='kitty nvim --'
             ;;
         *)
             cmd='xdg-open'

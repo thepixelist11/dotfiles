@@ -31,6 +31,7 @@
     waypaper
     libratbag
     nodejs_26
+    mpv
   ];
 
   programs.thunderbird.enable = true;

@@ -14,4 +14,6 @@
   boot.loader.systemd-boot.configurationLimit = 10;
 
   boot.supportedFilesystems = [ "nfs" ];
+
+  boot.tmp.cleanOnBoot = true;
 }
