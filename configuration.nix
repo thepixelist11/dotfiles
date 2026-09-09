@@ -37,5 +37,7 @@
     "flakes"
   ];
 
+  documentation.dev.enable = true;
+
   system.stateVersion = "26.05";
 }

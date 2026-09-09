@@ -26,6 +26,10 @@
     file
     nftables
 
+    # Man Pages
+    man-pages
+    man-pages-posix
+
     # Archiving
     unzip
     gzip
