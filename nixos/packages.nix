@@ -47,6 +47,8 @@
     go
     cargo
     rustc
+    clang-tools
+    bear
 
     # Desktop Environment
     wl-clipboard
