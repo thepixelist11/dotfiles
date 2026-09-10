@@ -51,8 +51,8 @@
 
     udev = {
       extraRules = ''
-        KERNEL=="card0", SUBSYSTEM=="drm", KERNELS=="0000:00:02.0", SYMLINK+="gpus/igpu"
-        KERNEL=="card1", SUBSYSTEM=="drm", KERNELS=="0000:01:00.0", SYMLINK+="gpus/dgpu"
+        KERNEL=="card*", SUBSYSTEM=="drm", KERNELS=="0000:00:02.0", SYMLINK+="gpus/igpu"
+        KERNEL=="card*", SUBSYSTEM=="drm", KERNELS=="0000:01:00.0", SYMLINK+="gpus/dgpu"
       '';
     };
   };

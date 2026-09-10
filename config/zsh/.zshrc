@@ -177,6 +177,7 @@ alias off='systemctl poweroff'
 alias x='exit'
 alias q='exit'
 alias :q='exit'
+alias pow='\cat /sys/class/power_supply/BAT1/capacity'
 
 # Directory jumps
 alias ..='cd ..'
