@@ -298,7 +298,7 @@ open() {
     esac
 
     local quoted_file
-    printf -v quoted_file '%q' "$file"
+    printf -v quoted_file '%q' "$(realpath "$file")"
 
     hyprctl eval "hl.exec_cmd(\"$cmd $quoted_file\")"
 }
