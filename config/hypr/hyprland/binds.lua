@@ -199,4 +199,4 @@ hl.bind(mainMod .. " + F8", hl.dsp.exec_cmd("hyprctl hyprsunset temperature +500
 
 -- Music Player
 
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("supersonic-desktop"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("supersonic"))

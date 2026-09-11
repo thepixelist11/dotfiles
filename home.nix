@@ -32,6 +32,7 @@
     libratbag
     nodejs_26
     mpv
+    supersonic
   ];
 
   programs.thunderbird.enable = true;

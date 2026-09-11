@@ -25,6 +25,7 @@
     ripgrep
     file
     nftables
+    playerctl
 
     # Man Pages
     man-pages
