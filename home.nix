@@ -21,7 +21,6 @@
     awww
     glib
     gowall
-    eww
     tokei
     julia
     git-credential-manager
@@ -33,6 +32,10 @@
     nodejs_26
     mpv
     supersonic
+    brotli
+    quickshell
+    qt6Packages.qtdeclarative
+    qt6Packages.qtmultimedia
   ];
 
   programs.thunderbird.enable = true;

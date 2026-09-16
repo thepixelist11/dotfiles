@@ -1,6 +1,7 @@
 local colors = require("hyprland.colors")
 
 local gaps = true
+local shadows = true
 
 local gapsIn = 6
 local gapsOut = 10
@@ -8,7 +9,7 @@ local borderSize = 2
 local rounding = 8
 
 local blurSize = 4
-local blurPasses = 4
+local blurPasses = 2
 
 hl.config({
 	general = {
@@ -53,7 +54,7 @@ hl.config({
 		},
 
 		shadow = {
-			enabled = gaps,
+			enabled = gaps and shadows,
 			range = 18,
 			render_power = 2,
 			offset = { 2, 3 },
