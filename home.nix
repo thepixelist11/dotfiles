@@ -36,6 +36,7 @@
     quickshell
     qt6Packages.qtdeclarative
     qt6Packages.qtmultimedia
+    thunar
   ];
 
   programs.thunderbird.enable = true;

@@ -1,5 +1,7 @@
 -- Monitors
 
+local ac = false
+
 hl.monitor({
 	output = "*",
 	mode = "preferred",
@@ -9,8 +11,7 @@ hl.monitor({
 
 hl.monitor({
 	output = "eDP-1",
-	-- mode = "2560x1600@60",
-	mode = "2560x1600@240",
+	mode = ac and "2560x1600@240" or "2560x1600@60",
 	position = "0x1380",
 	scale = 1.333333,
 })

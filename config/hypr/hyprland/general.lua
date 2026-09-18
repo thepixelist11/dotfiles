@@ -1,15 +1,16 @@
 local colors = require("hyprland.colors")
 
 local gaps = true
-local shadows = true
+local shadows = false
+local blur = false
 
 local gapsIn = 6
 local gapsOut = 10
 local borderSize = 2
 local rounding = 8
 
-local blurSize = 4
-local blurPasses = 2
+local blurSize = blur and 4 or 0
+local blurPasses = blur and 2 or 0
 
 hl.config({
 	general = {

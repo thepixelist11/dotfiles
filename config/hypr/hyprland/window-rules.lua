@@ -54,6 +54,7 @@ hl.window_rule({ match = { title = "(Waypaper)" }, float = true })
 hl.window_rule({ match = { title = "Qalculate!" }, float = true })
 hl.window_rule({ match = { title = "(Gnuplot.*)" }, float = true })
 hl.window_rule({ match = { title = "(.*Thunar)" }, float = true, size = { 900, 700 } })
+hl.window_rule({ match = { initial_class = "thunderbird", initial_title = "" }, float = true, size = { 750, 300 } })
 hl.window_rule({ match = { class = "io.github.supersonic-app.supersonic" }, float = true, size = { 900, 700 } })
 hl.window_rule({ match = { title = "(clock)" }, float = true })
 
