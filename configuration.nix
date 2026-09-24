@@ -11,6 +11,7 @@
     ./nixos/users.nix
     ./nixos/boot.nix
     ./nixos/filesystem.nix
+    ./nixos/bluetooth.nix
     ./nixos/modules/nvidia.nix
     ./nixos/modules/wireguard.nix
     ./nixos/modules/zen-browser.nix

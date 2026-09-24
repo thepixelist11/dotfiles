@@ -1,8 +1,8 @@
 local colors = require("hyprland.colors")
 
 local gaps = true
-local shadows = false
-local blur = false
+local shadows = true
+local blur = true
 
 local gapsIn = 6
 local gapsOut = 10

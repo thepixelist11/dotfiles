@@ -1,6 +1,6 @@
 -- Monitors
 
-local ac = false
+local ac = true
 
 hl.monitor({
 	output = "*",

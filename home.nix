@@ -37,6 +37,9 @@
     qt6Packages.qtdeclarative
     qt6Packages.qtmultimedia
     thunar
+    gamemode
+    ckan
+    pavucontrol
   ];
 
   programs.thunderbird.enable = true;

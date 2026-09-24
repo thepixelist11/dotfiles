@@ -173,6 +173,10 @@ alias cd='z'
 alias c='qalc'
 alias clock='tty-clock -s -c -t -C 3'
 
+# G++
+alias g++20='g++ -std=c++20 -fmodules-ts -Wall -g'
+alias g++20h='g++ -std=c++20 -fmodules-ts -c -x c++-system-header'
+
 # Quick system commands
 alias off='systemctl poweroff'
 alias x='exit'
