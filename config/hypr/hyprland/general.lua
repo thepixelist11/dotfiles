@@ -56,10 +56,10 @@ hl.config({
 
 		shadow = {
 			enabled = gaps and shadows,
-			range = 18,
+			range = 28,
 			render_power = 2,
 			offset = { 2, 3 },
-			color = "rgba(0, 0, 0, 0.3)",
+			color = "rgba(0, 0, 0, 0.2)",
 		},
 
 		dim_inactive = false,

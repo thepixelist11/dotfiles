@@ -154,7 +154,7 @@ if [[ "$MODE" == "light" && "$INVERT" == true ]]; then
     fi
 fi
 
-# gowall convert "$GOWALL_PATH" -t "$THEME"
+gowall convert "$GOWALL_PATH" -t "$THEME"
 
 BACKGROUND="$GOWALL_PATH"
 

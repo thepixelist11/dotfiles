@@ -40,6 +40,7 @@
     gamemode
     ckan
     pavucontrol
+    llvmPackages_23.clang
   ];
 
   programs.thunderbird.enable = true;
