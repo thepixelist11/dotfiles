@@ -41,6 +41,7 @@
     ckan
     pavucontrol
     llvmPackages_23.clang
+    valgrind
   ];
 
   programs.thunderbird.enable = true;
