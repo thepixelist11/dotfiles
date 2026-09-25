@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+    printf 'Usage: %s {import|include} FILE...\n' "${0##*/}" >&2
+    exit 2
+}
+
+[[ $# -ge 2 ]] || usage
+
+mode=$1
+shift
+
+case "$mode" in
+import)
+    to='import'
+    ;;
+include)
+    to='include'
+    ;;
+*)
+    usage
+    ;;
+esac
+
+for file in "$@"; do
+    [[ -f $file ]] || {
+        printf 'error: not a file: %s\n' "$file" >&2
+        continue
+    }
+
+    if [[ $to == import ]]; then
+        sed -E -i \
+            's/^([[:space:]]*)#[[:space:]]*include[[:space:]]*(<[^>]+>)[[:space:]]*$/\1import \2;/' \
+            "$file"
+    else
+        sed -E -i \
+            's/^([[:space:]]*)import[[:space:]]*(<[^>]+>)[[:space:]]*;[[:space:]]*$/\1#include \2/' \
+            "$file"
+    fi
+done
