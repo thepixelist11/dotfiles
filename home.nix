@@ -42,6 +42,10 @@
     pavucontrol
     llvmPackages_23.clang
     valgrind
+    typst
+    ffmpeg
+    cmake
+    zip
   ];
 
   programs.thunderbird.enable = true;
