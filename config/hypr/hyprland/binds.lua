@@ -168,7 +168,10 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- Brightness
 
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/scripts/change-brightness sub"), { locked = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/scripts/change-brightness"), { locked = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/scripts/change-brightness add"), { locked = true })
+
+hl.bind("SHIFT + XF86MonBrightnessDown", hl.dsp.exec_cmd("~/scripts/change-brightness sub max"), { locked = true })
+hl.bind("SHIFT + XF86MonBrightnessUp", hl.dsp.exec_cmd("~/scripts/change-brightness add max"), { locked = true })
 
 -- Calculator
 

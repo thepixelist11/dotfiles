@@ -46,6 +46,8 @@
     ffmpeg
     cmake
     zip
+    fish
+    libreoffice
   ];
 
   programs.thunderbird.enable = true;
