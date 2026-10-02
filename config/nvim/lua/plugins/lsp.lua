@@ -9,7 +9,7 @@ return {
         clangd = {
           cmd = {
             "clangd",
-            "--query-driver=/run/current-system/sw/bin/g++",
+            "--query-driver=/nix/store/*/bin/g++",
             "--background-index",
             "--experimental-modules-support",
           },

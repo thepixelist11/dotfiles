@@ -6,7 +6,7 @@
 
     description = "Ben";
 
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
 
     extraGroups = [
       "networkmanager"
