@@ -126,22 +126,23 @@ function open
 
     set -l file (realpath -- "$file")
     set -l mime (file --brief --mime-type -- "$file")
+    set -l escaped (string escape -- "$file")
 
     switch "$mime"
         case application/pdf
-            hyprctl dispatch exec "zathura "(string escape -- "$file")
+            hyprctl dispatch "hl.dsp.exec_cmd(\"zathura $escaped\")"
 
         case 'image/*'
-            hyprctl dispatch exec "qimgv "(string escape -- "$file")
+            hyprctl dispatch "hl.dsp.exec_cmd(\"qimgv $escaped\")"
 
         case 'video/*' 'audio/*'
-            hyprctl dispatch exec "mpv "(string escape -- "$file")
+            hyprctl dispatch "hl.dsp.exec_cmd(\"mpv $escaped\")"
 
         case 'text/*' 'application/*'
-            hyprctl dispatch exec "kitty nvim -- "(string escape -- "$file")
+            hyprctl dispatch "hl.dsp.exec_cmd(\"kitty nvim -- $escaped\")"
 
         case '*'
-            hyprctl dispatch exec "xdg-open "(string escape -- "$file")
+            hyprctl dispatch "hl.dsp.exec_cmd(\"xdg-open $escaped\")"
     end
 end
 
