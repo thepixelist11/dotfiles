@@ -181,8 +181,8 @@ else
     wal -n --cols16 -i "$BACKGROUND"
 fi
 
-echo "Updating kitty"
-kitten themes Pywal
+# echo "Updating kitty"
+# kitten themes Pywal
 
 echo "Setting mouse rgb"
 ~/scripts/change-mouse-rgb "$(cat ~/.cache/wal/colors | head -n 6 | tail -n -1 | cut -d '#' -f2)"
