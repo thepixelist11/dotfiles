@@ -125,6 +125,12 @@ hl.bind(mainMod .. " + SPACE", function()
 	hl.dispatch(hl.dsp.window.center())
 end)
 
+hl.bind(mainMod .. " + SHIFT + SPACE", function()
+	hl.dispatch(hl.dsp.window.float())
+	hl.dispatch(hl.dsp.window.resize({ x = 800, y = 1150 }))
+	hl.dispatch(hl.dsp.window.center())
+end)
+
 -- Hyprpicker
 
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker | tail -n 1 | wl-copy"))
