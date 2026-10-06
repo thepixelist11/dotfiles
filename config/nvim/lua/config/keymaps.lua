@@ -11,10 +11,10 @@ map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, 
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
 -- Move faster using the <ctrl> hjkl keys
-map({ "n", "v" }, "<C-h>", "5h", { noremap = true })
+map({ "n", "v" }, "<C-h>", "b", { noremap = true })
 map({ "n", "v" }, "<C-j>", "5j", { noremap = true })
 map({ "n", "v" }, "<C-k>", "5k", { noremap = true })
-map({ "n", "v" }, "<C-l>", "5l", { noremap = true })
+map({ "n", "v" }, "<C-l>", "e", { noremap = true })
 
 -- Switch between windows with <ctrl> arrow keys
 map({ "t", "n" }, "<C-Up>", "<C-\\><C-n><C-w><Up>")
