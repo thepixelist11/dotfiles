@@ -1,4 +1,5 @@
 fish_add_path "$HOME/.volta/bin"
+fish_add_path "$HOME/dotfiles/scripts"
 
 # CUDA / NVIDIA
 set -gx __NV_PRIME_RENDER_OFFLOAD 1

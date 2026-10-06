@@ -13,6 +13,9 @@ alias ls 'eza -ha --color=auto --group-directories-first'
 alias ll 'eza -hal --color=auto --group-directories-first'
 alias lt 'eza --tree -hal --color=auto --group-directories-first'
 
+alias ff fastfetch
+alias neofetch fastfetch
+
 alias grep 'grep --color=auto'
 alias du 'dust -r'
 alias tree "tree --dirsfirst -a -I '.git' -I 'node_modules' -C"
@@ -42,6 +45,7 @@ alias .... 'cd ../../..'
 alias dots 'nvim ~/dotfiles/'
 alias kittyconf 'nvim ~/.config/kitty/kitty.conf'
 alias hyprconf 'nvim ~/.config/hypr'
+alias fishconf "nvim ~/dotfiles/config/fish/config.fish"
 
 alias gs 'git status'
 alias ga 'git add .'
@@ -51,7 +55,6 @@ alias gl 'git log --pretty=format:"%h %an <%ae> %ad %s" --date=short'
 function r
     source "$__fish_config_dir/config.fish"
     clear
-    fastfetch
 end
 
 alias op 'hyprctl dispatch -- exec'
