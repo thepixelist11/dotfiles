@@ -1,15 +1,15 @@
-# Open document in fit-width mode by default
+# open document in fit-width mode by default
 set adjust-open "best-fit"
 
-# One page per row by default
+# one page per row by default
 set pages-per-row 1
 
-#stop at page boundries
+# stop at page boundries
 set scroll-page-aware "true"
 set scroll-full-overlap 0.01
 set scroll-step 100
 
-#zoom settings
+# zoom settings
 set zoom-min 10
 set guioptions ""
 

@@ -4,8 +4,7 @@ local terminal = "kitty"
 local fileManager = "thunar"
 local email = "thunderbird"
 local browser = "zen"
--- local menu = 'wofi --show drun -i -I -b -a -p " " --conf ~/.config/wofi/wofi.conf --style ~/.config/wofi/style.css'
-local menu = "qs ipc call launcher toggle"
+local menu = 'wofi --show drun -i -I -b -a -p " " --conf ~/.config/wofi/wofi.conf --style ~/.config/wofi/style.css'
 local screenshot = [[grimblast copysave area "$HOME/Media/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S.png')"]]
 
 -- General
@@ -27,7 +26,7 @@ hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client -t"))
 
 -- Clipboard
 
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/scripts/cliphist"))
+-- hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/scripts/cliphist"))
 
 -- LibreOffice
 

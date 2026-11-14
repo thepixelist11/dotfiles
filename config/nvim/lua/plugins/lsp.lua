@@ -23,6 +23,7 @@ return {
               workspace = {
                 library = {
                   "/run/current-system/sw/share/hypr/stubs",
+                  vim.fn.getcwd(),
                 },
                 checkThirdParty = false,
               },
@@ -97,6 +98,17 @@ return {
         end,
         group = nvim_metals_group,
       })
+    end,
+  },
+
+  {
+    "Julian/lean.nvim",
+    event = { "BufReadPre *.lean", "BufNewFile *.lean" },
+
+    init = function()
+      vim.g.lean_config = {
+        mappings = true,
+      }
     end,
   },
 }

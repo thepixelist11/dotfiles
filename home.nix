@@ -48,6 +48,8 @@
     zip
     libreoffice
     typescript
+    lean
+    smartmontools
   ];
 
   programs.thunderbird.enable = true;

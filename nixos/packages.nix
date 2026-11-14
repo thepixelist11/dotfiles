@@ -61,6 +61,8 @@
 
     # Misc
     tree-sitter
+
+    (llama-cpp.override { cudaSupport = true; })
   ];
 
   # Enabled for Volta
@@ -75,4 +77,6 @@
   };
 
   programs.fish.enable = true;
+
+  programs.system-config-printer.enable = true;
 }

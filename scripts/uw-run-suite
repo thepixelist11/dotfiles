@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+if [[ "$#" -ne 2 ]]; then
+    echo "Usage: run-suite <suite-file> <program>" 1>&2
+    exit 1
+fi
+
+suite="$1"
+program="$2"
+in="$(mktemp)"
+out="$(mktemp)"
+
+for stem in $(cat "$suite"); do
+    args=""
+    >"$in"
+    >"$out"
+
+    if ! [[ -f "$stem.out" && -r "$stem.out" ]]; then
+        echo "Could not find readable file: $stem.out" 1>&2
+        rm "$in"
+        rm "$out"
+        exit 2
+    fi
+
+    if [[ -f "$stem.args" && -r "$stem.args" ]]; then
+        args=$(cat "$stem.args")
+    fi
+
+    if [[ -f "$stem.in" && -r "$stem.in" ]]; then
+        cat "$stem.in" >"$in"
+    fi
+
+    "$program" $args <"$in" 1>"$out" 2>/dev/null
+
+    diff "$out" "${stem}.out" >/dev/null
+
+    if [[ $? -ne 0 ]]; then
+        echo "Test failed: $stem"
+        echo "Args:"
+        echo "$args"
+        echo "Input:"
+        cat "$in"
+        echo "Expected:"
+        cat "${stem}.out"
+        echo "Actual:"
+        cat "$out"
+    fi
+done
+
+rm "$in"
+rm "$out"

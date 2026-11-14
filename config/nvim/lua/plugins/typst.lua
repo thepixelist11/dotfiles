@@ -3,7 +3,7 @@ return {
 
   init = function()
     require("typst-preview").setup({
-      invert_colors = "auto",
+      -- invert_colors = "auto",
     })
   end,
 }

@@ -37,4 +37,5 @@ mkdir -p "$HOME/.config/gtk-4.0"
 /home/ben/scripts/wallpaper \
     "$(<"$HOME/.cache/wal/last_wallpaper_path")" \
     --theme "$1" \
+    --no-invert \
     --immediate

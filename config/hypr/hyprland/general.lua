@@ -101,7 +101,7 @@ hl.config({
 		no_hardware_cursors = true,
 		no_break_fs_vrr = 2,
 		min_refresh_rate = 144,
-		zoom_factor = 0,
+		zoom_factor = 1,
 		zoom_rigid = false,
 		use_cpu_buffer = true,
 	},
